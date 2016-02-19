@@ -11,6 +11,7 @@ import BDBOAuth1Manager
 
 class ViewController: UIViewController {
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,6 +22,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onLogin(sender: AnyObject) {
+        TwitterClient.sharedInstance.loginWithCompletion {
+            (success: Bool?, error: NSError?)-> Void in
+            self.performSegueWithIdentifier("LoginSegue", sender: self)
+        }
+    }
 
+    
+    
+    
 }
 
