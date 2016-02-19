@@ -26,7 +26,8 @@ class TwitterClient: BDBOAuth1SessionManager {
     func loginWithCompletion(completion: ((Bool?, NSError?) -> Void)? ) {
         requestSerializer.removeAccessToken()
         fetchRequestTokenWithPath("oauth/request_token", method: "GET", callbackURL: NSURL(string: "cptwitterdemo://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential!) -> Void in
-                print("hey!")
+            let authURL = NSURL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken.token)")!
+            UIApplication.sharedApplication().openURL(authURL)
             
             }) { (error: NSError!) -> Void in
                 print("\(error)")
