@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="130.66666666666666" y="305.30000000000001"/>
         </scene>
-        <!--View Controller-->
+        <!--Tweets View Controller-->
         <scene sceneID="Nhv-hx-L0Y">
             <objects>
-                <viewController id="SZ2-v8-89Y" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TweetsViewController" id="SZ2-v8-89Y" customClass="TweetsViewController" customModule="twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fZp-sU-cha"/>
                         <viewControllerLayoutGuide type="bottom" id="Gnf-g2-kQe"/>
@@ -46,6 +46,15 @@
                     <view key="view" contentMode="scaleToFill" id="pMq-1n-WPt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HO-k8-CET">
+                                <rect key="frame" x="128" y="226" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="SZ2-v8-89Y" eventType="touchUpInside" id="8Z1-WP-ndY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

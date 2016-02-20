@@ -16,6 +16,7 @@
 		B2C40C5F1C77D01B00F03497 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C40C5E1C77D01B00F03497 /* TwitterClient.swift */; };
 		B2F1CB101C77EDE600CABA89 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1CB0F1C77EDE600CABA89 /* User.swift */; };
 		B2F1CB131C77EDFA00CABA89 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1CB121C77EDFA00CABA89 /* Tweet.swift */; };
+		B2F1CB151C783AB100CABA89 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1CB141C783AB100CABA89 /* TweetsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B2C40C5E1C77D01B00F03497 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		B2F1CB0F1C77EDE600CABA89 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B2F1CB121C77EDFA00CABA89 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		B2F1CB141C783AB100CABA89 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				B2178CF71C77CF6C00FA56BB /* LoginViewController.swift */,
+				B2F1CB141C783AB100CABA89 /* TweetsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			files = (
 				B2F1CB101C77EDE600CABA89 /* User.swift in Sources */,
 				B2F1CB131C77EDFA00CABA89 /* Tweet.swift in Sources */,
+				B2F1CB151C783AB100CABA89 /* TweetsViewController.swift in Sources */,
 				B2178CF81C77CF6C00FA56BB /* LoginViewController.swift in Sources */,
 				B2C40C5F1C77D01B00F03497 /* TwitterClient.swift in Sources */,
 				B2178CF61C77CF6C00FA56BB /* AppDelegate.swift in Sources */,
