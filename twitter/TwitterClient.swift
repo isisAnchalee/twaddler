@@ -34,4 +34,28 @@ class TwitterClient: BDBOAuth1SessionManager {
                 print("\(error)")
         }
     }
+    
+    func handleAuthCallback(url: NSURL){
+        fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential(queryString: url.query), success: { (accessToken: BDBOAuth1Credential!) -> Void in
+            print("Successfully got the access token!")
+            TwitterClient.sharedInstance.requestSerializer.saveAccessToken(accessToken)
+            TwitterClient.sharedInstance.GET("1.1/account/verify_credentials.json", parameters: nil, progress: { (progress: NSProgress) -> Void in
+                }, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+                    print("user: \(response)")
+                    //                let user = User(dictionary: response as! NSDictionary)
+                    //                User.currentUser = user
+                    //                self.loginComplition?(user: user, error: nil)
+                }, failure: { (operation: NSURLSessionDataTask?, error) -> Void in
+                    print("Failed to get current user")
+                    //                self.loginComplition?(user: nil, error: error)
+            })
+            
+            }) { (error: NSError!) -> Void in
+                print("Failed to get access token.")
+        }
+    }
+    
+    func requestCurrentUser(){
+
+    }
 }
