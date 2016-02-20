@@ -27,10 +27,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="SZ2-v8-89Y" kind="modal" identifier="loginSegue" id="Z8X-yJ-CIc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.66666666666666" y="305.30000000000001"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Nhv-hx-L0Y">
+            <objects>
+                <viewController id="SZ2-v8-89Y" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fZp-sU-cha"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gnf-g2-kQe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pMq-1n-WPt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3r-dZ-oir" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512" y="305"/>
         </scene>
     </scenes>
 </document>
