@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     @IBAction func onLogin(sender: AnyObject) {
         TwitterClient.sharedInstance.loginWithCompletion {
             (user: User?, error: NSError?)-> Void in
-            print("called!!!!")
             if user != nil {
                 self.performSegueWithIdentifier("loginSegue", sender: self)
             } else {
