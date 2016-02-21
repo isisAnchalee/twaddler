@@ -58,34 +58,38 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@isisAnchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLh-ah-X5n">
-                                                    <rect key="frame" x="164" y="22" width="88" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@isisAnchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLh-ah-X5n">
+                                                    <rect key="frame" x="153" y="23" width="88" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.72286076570680624" green="0.72286076570680624" blue="0.72286076570680624" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Isis Anchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKI-I9-cBg">
-                                                    <rect key="frame" x="58" y="20" width="101" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Isis Anchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKI-I9-cBg">
+                                                    <rect key="frame" x="60" y="22" width="89" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tDn-zp-Bur">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tDn-zp-Bur">
                                                     <rect key="frame" x="8" y="22" width="44" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="3xS-Ga-4I3"/>
+                                                        <constraint firstAttribute="height" constant="44" id="uEd-NI-rma"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💪 Isis Anchalee retweeted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdB-eE-ckO">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="💪 Isis Anchalee retweeted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdB-eE-ckO">
                                                     <rect key="frame" x="10" y="0.0" width="165" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.72286076570000002" green="0.72286076570000002" blue="0.72286076570000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Did you know you can tell if a programmer simply by saying the word timezones" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IT4-GX-D71">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Did you know you can tell if a programmer simply by saying the word timezones" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IT4-GX-D71">
                                                     <rect key="frame" x="60" y="39" width="252" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClS-Aa-eou">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClS-Aa-eou">
                                                     <rect key="frame" x="290" y="22" width="22" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.72286076570000002" green="0.72286076570000002" blue="0.72286076570000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -102,7 +106,21 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="xdB-eE-ckO" secondAttribute="trailing" constant="145" id="32S-mh-IVQ"/>
+                                                <constraint firstItem="tDn-zp-Bur" firstAttribute="leading" secondItem="KaZ-Az-hFQ" secondAttribute="leading" constant="8" id="6DS-zF-D9Q"/>
+                                                <constraint firstItem="xdB-eE-ckO" firstAttribute="top" secondItem="KaZ-Az-hFQ" secondAttribute="top" id="CgY-6n-U1H"/>
                                                 <constraint firstItem="xdB-eE-ckO" firstAttribute="leading" secondItem="KaZ-Az-hFQ" secondAttribute="leading" constant="10" id="KEH-nz-6s4"/>
+                                                <constraint firstAttribute="trailing" secondItem="IT4-GX-D71" secondAttribute="trailing" constant="8" id="N8C-ce-fx7"/>
+                                                <constraint firstItem="tDn-zp-Bur" firstAttribute="top" secondItem="xdB-eE-ckO" secondAttribute="bottom" constant="6" id="Quv-ag-NWU"/>
+                                                <constraint firstAttribute="trailing" secondItem="ClS-Aa-eou" secondAttribute="trailing" constant="8" id="U6l-yb-k4W"/>
+                                                <constraint firstItem="ClS-Aa-eou" firstAttribute="top" secondItem="KaZ-Az-hFQ" secondAttribute="top" constant="22" id="aA7-AT-8B8"/>
+                                                <constraint firstItem="wLh-ah-X5n" firstAttribute="top" secondItem="xdB-eE-ckO" secondAttribute="bottom" constant="7" id="aeo-AO-w9Y"/>
+                                                <constraint firstItem="IT4-GX-D71" firstAttribute="leading" secondItem="tDn-zp-Bur" secondAttribute="trailing" constant="8" id="jyi-IS-otP"/>
+                                                <constraint firstItem="wLh-ah-X5n" firstAttribute="leading" secondItem="pKI-I9-cBg" secondAttribute="trailing" constant="4" id="olz-55-UqD"/>
+                                                <constraint firstItem="xdB-eE-ckO" firstAttribute="leading" secondItem="KaZ-Az-hFQ" secondAttribute="leading" constant="10" id="pOB-sX-G12"/>
+                                                <constraint firstAttribute="bottom" secondItem="tDn-zp-Bur" secondAttribute="bottom" constant="29" id="rzN-xX-skZ"/>
+                                                <constraint firstItem="pKI-I9-cBg" firstAttribute="leading" secondItem="tDn-zp-Bur" secondAttribute="trailing" constant="8" id="uov-ki-VXI"/>
+                                                <constraint firstItem="IT4-GX-D71" firstAttribute="top" secondItem="ClS-Aa-eou" secondAttribute="bottom" constant="1" id="wBI-NM-ybd"/>
                                                 <constraint firstItem="xdB-eE-ckO" firstAttribute="top" secondItem="KaZ-Az-hFQ" secondAttribute="top" id="ygf-rY-yak"/>
                                             </constraints>
                                         </tableViewCellContentView>
