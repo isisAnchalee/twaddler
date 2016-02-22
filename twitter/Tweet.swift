@@ -43,7 +43,9 @@ class Tweet: NSObject {
                 text = textStr
             }
         }
-    
+        if let repliedTo = dictionary["in_reply_to_screen_name"] as? String {
+            replyName = repliedTo
+        }
     }
     
     class func tweetsWithArray(array: [NSDictionary]) -> [Tweet] {

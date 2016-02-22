@@ -25,6 +25,9 @@ class TweetDetailsViewController: UIViewController {
     @IBOutlet weak var retweetCountLabel: UILabel!
     @IBOutlet weak var tweetBodyLabel: UILabel!
     
+    @IBOutlet weak var backImage: UIImageView!
+    @IBOutlet weak var retweetImage: UIImageView!
+    @IBOutlet weak var likeImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +55,14 @@ class TweetDetailsViewController: UIViewController {
         } else {
             retweetLabel.hidden = true
         }
+        profileImageView.layer.cornerRadius = 5
+        profileImageView.clipsToBounds = true
+        likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action.png")!)
+        backImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/reply-action_0.png")!)
+        retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action.png")!)
     }
     
-
+    
     /*
     // MARK: - Navigation
 

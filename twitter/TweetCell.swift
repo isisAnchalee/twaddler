@@ -25,6 +25,7 @@ class TweetCell: UITableViewCell {
             tweetHandleLabel.text = "@\(tweet.user!.screenName!)"
             timeAgoLabel.text = DateManager.getFriendlyTime(tweet.createdAt!)
             tweetBodyLabel.text = tweet.text!
+            retweetLabel.hidden = false
             if tweet.retweetName != nil {
                 retweetLabel.text = "\(tweet.retweetName!) retweeted"
             } else if tweet.replyName != nil {
@@ -37,6 +38,9 @@ class TweetCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        profileImageView.layer.cornerRadius = 5
+        profileImageView.clipsToBounds = true
+        
         // Initialization code
     }
 
