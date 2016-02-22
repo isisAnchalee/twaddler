@@ -11,6 +11,7 @@ import UIKit
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var tweets: [Tweet]? = []
+    var refreshControl: UIRefreshControl?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,12 +22,28 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
-        
+        populateTimeline()
+        addRefresh()
+    }
+    
+    func populateTimeline(refreshControl: UIRefreshControl? = nil) {
         TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> () in
             self.tweets = tweets
-            print(self.tweets)
             self.tableView.reloadData()
+            if let refreshControl = refreshControl {
+                refreshControl.endRefreshing()
+            }
         })
+    }
+    
+    func addRefresh() {
+        refreshControl = UIRefreshControl()
+        refreshControl!.addTarget(self, action: "refreshCallback:", forControlEvents: .ValueChanged)
+        tableView.insertSubview(refreshControl!, atIndex: 0)
+    }
+    
+    func refreshCallback(refreshControl: UIRefreshControl) {
+        populateTimeline(refreshControl)
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -52,11 +69,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let cell = sender as! UITableViewCell
-        let indexPath = tableView.indexPathForCell(cell)
-        let tweet = tweets![indexPath!.row]
-        let viewController = segue.destinationViewController as! TweetDetailsViewController
-        viewController.tweet = tweet
+        if let cell = sender as? UITableViewCell {
+            let indexPath = tableView.indexPathForCell(cell)
+            let tweet = tweets![indexPath!.row]
+            let viewController = segue.destinationViewController as! TweetDetailsViewController
+            viewController.tweet = tweet
+        }
     }
 
 }
