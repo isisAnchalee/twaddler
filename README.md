@@ -1,4 +1,4 @@
-# Project 3 - *Twaddler*
+# Project 3 - *Twaddlerg*
 
 **Name of your app** is a basic twitter app to read and compose tweets from the [Twitter API](https://apps.twitter.com/).
 
@@ -44,8 +44,9 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-I worked on this earlier at the office and had favorite/retweet network requests working. I did not change my code and when I got home I started receiving 404s **sometimes**. They started off working 100% of the time so I'm not sure what happened :( my code in TwitterClient looks right. Halp.
+1. I worked on this earlier at the office and had favorite/retweet network requests working. I did not change my code and when I got home I started receiving 404s **sometimes**. They started off working 100% of the time so I'm not sure what happened :( my code in TwitterClient looks right. Halp.
 
+2. Somehow the navigationcontroller on the timeline got stretched extra tall when rendered. It was driving me crazy but I couldn't fix it.
 
 ## License
 
