@@ -18,21 +18,33 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var profileImageViewTopMargin: NSLayoutConstraint!
     
+    @IBOutlet weak var likeImage: UIImageView!
+    @IBOutlet weak var retweetImage: UIImageView!
+    @IBOutlet weak var replyImage: UIImageView!
+    
+    @IBOutlet weak var imageTopMargin: NSLayoutConstraint!
+    @IBOutlet weak var nameTopMargin: NSLayoutConstraint!
+    @IBOutlet weak var usernameTopMargin: NSLayoutConstraint!
+    
+    
+    
     var tweet: Tweet!{
         didSet {
+            setupIcons()
             profileImageView.setImageWithURL((tweet.user!.profileURL ?? NSURL(string:"http://placekitten.com/40/40"))!)
             userNameLabel.text = tweet.user!.name
             tweetHandleLabel.text = "@\(tweet.user!.screenName!)"
             timeAgoLabel.text = DateManager.getFriendlyTime(tweet.createdAt!)
             tweetBodyLabel.text = tweet.text!
-            retweetLabel.hidden = false
+            setInitialConstraints()
             if tweet.retweetName != nil {
                 retweetLabel.text = "\(tweet.retweetName!) retweeted"
             } else if tweet.replyName != nil {
                 retweetLabel.text = "In reply to \(tweet.replyName!)"
             } else {
-                retweetLabel.hidden = true
+                adjustConstraints()
             }
+
         }
     }
     
@@ -40,8 +52,26 @@ class TweetCell: UITableViewCell {
         super.awakeFromNib()
         profileImageView.layer.cornerRadius = 5
         profileImageView.clipsToBounds = true
-        
-        // Initialization code
+    }
+    
+    func setInitialConstraints(){
+        retweetLabel.hidden = false
+        imageTopMargin.constant = 23
+        nameTopMargin.constant = 23
+        usernameTopMargin.constant = 23
+    }
+    
+    func adjustConstraints(){
+        retweetLabel.hidden = true
+        imageTopMargin.constant = 10
+        nameTopMargin.constant = 10
+        usernameTopMargin.constant = 10
+    }
+    
+    func setupIcons(){
+        likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action.png")!)
+        replyImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/reply-action_0.png")!)
+        retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action.png")!)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
