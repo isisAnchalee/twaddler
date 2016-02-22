@@ -18,7 +18,7 @@ class User {
     var name: String?
     var screenName: String?
     var description: String?
-    var profileURL: String?
+    var profileURL: NSURL?
     var dictionary: NSDictionary?
     var followers: Int?
     var following: Int?
@@ -30,7 +30,7 @@ class User {
         description = dictionary["description"] as? String
         followers = dictionary["followers_count"] as? Int
         following = dictionary["following"] as? Int
-        profileURL = dictionary["profile_image_url_https"] as? String
+        profileURL = NSURL(string: dictionary["profile_image_url_https"] as! String)
     }
     
     func logout(){

@@ -23,7 +23,6 @@ class Tweet: NSObject {
     init(dictionary: NSDictionary){
         user = User(dictionary: dictionary["user"] as! NSDictionary)
         text = dictionary["text"] as? String
-        
         if let createdAtStr = dictionary["created_at"] as? String {
             createdAtString = createdAtStr
             createdAt = DateManager.defaultFormatter.dateFromString(createdAtString!)

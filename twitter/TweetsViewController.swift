@@ -28,7 +28,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             self.tableView.reloadData()
         })
     }
-    
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return tweets!.count
     }
@@ -51,14 +51,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         User.currentUser?.logout()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        let tweet = tweets![indexPath!.row]
+        let viewController = segue.destinationViewController as! TweetDetailsViewController
+        viewController.tweet = tweet
     }
-    */
 
 }

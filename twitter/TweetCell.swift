@@ -16,9 +16,11 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var tweetHandleLabel: UILabel!
     @IBOutlet weak var tweetBodyLabel: UILabel!
     @IBOutlet weak var timeAgoLabel: UILabel!
-
+    @IBOutlet weak var profileImageViewTopMargin: NSLayoutConstraint!
+    
     var tweet: Tweet!{
         didSet {
+            profileImageView.setImageWithURL((tweet.user!.profileURL ?? NSURL(string:"http://placekitten.com/40/40"))!)
             userNameLabel.text = tweet.user!.name
             tweetHandleLabel.text = "@\(tweet.user!.screenName!)"
             timeAgoLabel.text = DateManager.getFriendlyTime(tweet.createdAt!)

@@ -8,9 +8,7 @@
 
 import UIKit
 
-
-
-class DateManager: NSObject {
+class DateManager {
     class var defaultFormatter: NSDateFormatter {
         struct Static {
             static let instance: NSDateFormatter = NSDateFormatter()
@@ -37,6 +35,7 @@ class DateManager: NSObject {
         
         return Static.instance
     }
+    
     
     class func getFriendlyTime(fromDate: NSDate!) -> String {
         let interval = fromDate.timeIntervalSinceNow
