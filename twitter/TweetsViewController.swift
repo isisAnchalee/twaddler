@@ -11,7 +11,7 @@ import UIKit
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var tweets: [Tweet]? = []
-    var refreshControl: UIRefreshControl?
+    var refreshControl: UIRefreshControl!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,13 +39,13 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func addRefresh() {
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: "refreshCallback", forControlEvents: .ValueChanged)
+        self.refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: "refreshCallback", forControlEvents: UIControlEvents.ValueChanged)
         tableView.insertSubview(refreshControl!, atIndex: 0)
     }
     
-    func refreshCallback(refreshControl: UIRefreshControl) {
-        populateTimeline(refreshControl)
+    func refreshCallback() {
+        populateTimeline(self.refreshControl)
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{

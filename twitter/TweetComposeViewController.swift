@@ -46,6 +46,7 @@ class TweetComposeViewController: UIViewController, UITextViewDelegate {
         nameLabel.text = user?.name
         screenNameLabel.text = user?.screenName
         setupReply()
+        counterLabel.text = "\(140 - tweetTextView.text.characters.count)"
     }
 
     override func didReceiveMemoryWarning() {

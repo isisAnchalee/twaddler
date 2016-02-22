@@ -129,7 +129,6 @@ class TwitterClient: BDBOAuth1SessionManager {
                 completion(tweet: tweet, error: nil)
             },
             failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
-                print("error unfavoriting")
                 completion(tweet: nil, error: error)
         })
     }

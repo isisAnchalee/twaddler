@@ -63,6 +63,7 @@ class TweetDetailsViewController: UIViewController {
                 } else {
                     self.retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action.png")!)
                     tweet!.retweeted = !tweet!.retweeted
+                    tweet!.retweetCount += 1
                     self.retweetCountLabel.text = String(tweet!.retweetCount + 1)
                 }
             }
