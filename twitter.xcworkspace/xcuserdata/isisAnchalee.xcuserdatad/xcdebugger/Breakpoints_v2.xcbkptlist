@@ -104,13 +104,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twitter/TweetDetailsViewController.swift"
-            timestampString = "477799705.352329"
+            timestampString = "477810246.2538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "setupViewData()"
-            landmarkType = "5">
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "TweetDetailsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twitter/TweetDetailsViewController.swift"
-            timestampString = "477802011.116997"
+            timestampString = "477810246.2538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "setupViewData()"
             landmarkType = "5">
          </BreakpointContent>

@@ -24,7 +24,6 @@ class TweetDetailsViewController: UIViewController {
     @IBOutlet weak var favoriteLabel: UILabel!
     @IBOutlet weak var retweetCountLabel: UILabel!
     @IBOutlet weak var tweetBodyLabel: UILabel!
-    
     @IBOutlet weak var backImage: UIImageView!
     @IBOutlet weak var retweetImage: UIImageView!
     @IBOutlet weak var likeImage: UIImageView!
@@ -32,15 +31,73 @@ class TweetDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewData()
-        // Do any additional setup after loading the view.
+        setupGestures()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    func setupGestures(){
+        let retweetGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("retweetTapped:"))
+        let likeGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("likeTapped:"))
+        retweetImage.userInteractionEnabled = true
+        likeImage.userInteractionEnabled = true
+        retweetImage.addGestureRecognizer(retweetGestureRecognizer)
+        likeImage.addGestureRecognizer(likeGestureRecognizer)
+    }
+    
+    func retweetTapped(img: AnyObject) {
+        if tweet.retweeted{
+            TwitterClient.sharedInstance.unretweetWithCompletion(tweet.id!) { (tweet, error) -> () in
+                if error != nil {
+                    print(error?.description)
+                } else {
+                    self.retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action-on-pressed.png")!)
+                }
+            }
+        } else {
+            TwitterClient.sharedInstance.retweetWithCompletion(tweet.id!) { (tweet, error) -> () in
+                if error != nil {
+                    print(error?.description)
+                } else {
+                    self.retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action.png")!)
+                }
+            }
+        }
+        tweet.retweeted = !tweet.retweeted
+    }
+    
+    func likeTapped(img: AnyObject) {
+        if tweet.favorited{
+            TwitterClient.sharedInstance.unfavoriteWithCompletion(tweet.id) { (tweet, error) -> () in
+                if error != nil {
+                    print(error?.description)
+                } else {
+                    self.likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action-on-pressed.png")!)
+                }
+            }
+        } else {
+            TwitterClient.sharedInstance.favoriteWithCompletion(tweet.id) { (tweet, error) -> () in
+                if error != nil {
+                    print(error?.description)
+                } else {
+                    self.likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action.png")!)
+                }
+            }
+        }
+        tweet.favorited = !tweet.favorited
+    }
+
+    
     func setupViewData() {
+        bindDataToView()
+        profileImageView.layer.cornerRadius = 5
+        profileImageView.clipsToBounds = true
+        setupIcons()
+    }
+    
+    func bindDataToView(){
         usernameLabel.text = tweet.user!.name
         screenNameLabel.text = tweet.user!.screenName
         dateLabel.text = DateManager.detailedFormatter.stringFromDate(tweet.createdAt!)
@@ -55,13 +112,21 @@ class TweetDetailsViewController: UIViewController {
         } else {
             retweetLabel.hidden = true
         }
-        profileImageView.layer.cornerRadius = 5
-        profileImageView.clipsToBounds = true
-        likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action.png")!)
-        backImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/reply-action_0.png")!)
-        retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action.png")!)
     }
     
+    func setupIcons(){
+        if tweet.favorited{
+            likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action-on-pressed.png")!)
+        } else {
+            likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action.png")!)
+        }
+        if tweet.retweeted{
+            retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action-on-pressed.png")!)
+        }else{
+            retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action.png")!)
+        }
+        backImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/reply-action_0.png")!)
+    }
     
     /*
     // MARK: - Navigation

@@ -9,6 +9,7 @@
 import UIKit
 
 class Tweet: NSObject {
+    var id: Int?
     var user: User?
     var text: String?
     var createdAtString: String?
@@ -23,6 +24,10 @@ class Tweet: NSObject {
     init(dictionary: NSDictionary){
         user = User(dictionary: dictionary["user"] as! NSDictionary)
         text = dictionary["text"] as? String
+        id = dictionary["id"] as? Int
+        favorited = dictionary["favorited"] as? Bool ?? false
+        retweeted = dictionary["retweeted"] as? Bool ?? false
+        
         if let createdAtStr = dictionary["created_at"] as? String {
             createdAtString = createdAtStr
             createdAt = DateManager.defaultFormatter.dateFromString(createdAtString!)
@@ -46,6 +51,7 @@ class Tweet: NSObject {
         if let repliedTo = dictionary["in_reply_to_screen_name"] as? String {
             replyName = repliedTo
         }
+        
     }
     
     class func tweetsWithArray(array: [NSDictionary]) -> [Tweet] {
