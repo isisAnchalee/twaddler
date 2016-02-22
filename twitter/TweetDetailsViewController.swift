@@ -41,10 +41,13 @@ class TweetDetailsViewController: UIViewController {
     func setupGestures(){
         let retweetGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("retweetTapped:"))
         let likeGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("likeTapped:"))
+        let replyGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("replyTapped:"))
+        backImage.userInteractionEnabled = true
         retweetImage.userInteractionEnabled = true
         likeImage.userInteractionEnabled = true
         retweetImage.addGestureRecognizer(retweetGestureRecognizer)
         likeImage.addGestureRecognizer(likeGestureRecognizer)
+        backImage.addGestureRecognizer(replyGestureRecognizer)
     }
     
     func retweetTapped(img: AnyObject) {
@@ -88,8 +91,16 @@ class TweetDetailsViewController: UIViewController {
         }
         tweet.favorited = !tweet.favorited
     }
-
     
+    func replyTapped(img: AnyObject){
+        if let tweet = tweet{
+            let vc = storyboard?.instantiateViewControllerWithIdentifier("TweetComposeViewController") as! TweetComposeViewController!
+            navigationController?.pushViewController(vc, animated: true)
+            vc.tweetReplyId = tweet.id
+            vc.tweetReplyUsername = tweet.user!.screenName
+        }
+    }
+
     func setupViewData() {
         bindDataToView()
         profileImageView.layer.cornerRadius = 5

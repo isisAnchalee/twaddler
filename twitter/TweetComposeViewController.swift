@@ -18,11 +18,16 @@ class TweetComposeViewController: UIViewController {
         navigationController?.popViewControllerAnimated(true)
     }
     
+    var tweetReplyId: Int?
+    var tweetReplyUsername: String?
+    
     @IBAction func tweetButtonPressed(sender: AnyObject) {
         let params: NSMutableDictionary = (dictionary: ["status": tweetTextView.text])
+        if let tweetReplyId = tweetReplyId {
+            params.setValue(tweetReplyId, forKey: "in_reply_to_status_id")
+        }
         
         TwitterClient.sharedInstance.createTweetWithCompletion(params) { (tweet, error) -> () in
-            
             if error != nil {
                 print(error?.description)
             }
@@ -36,11 +41,18 @@ class TweetComposeViewController: UIViewController {
         profileImageView.setImageWithURL((user!.profileURL ?? NSURL(string:"http://placekitten.com/40/40"))!)
         nameLabel.text = user?.name
         screenNameLabel.text = user?.screenName
+        setupReply()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupReply(){
+        if tweetReplyId != nil{
+            tweetTextView.text = "@\(tweetReplyUsername!)"
+        }
     }
     
 
