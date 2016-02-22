@@ -24,11 +24,13 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.estimatedRowHeight = 120
         populateTimeline()
         addRefresh()
+
     }
     
     func populateTimeline(refreshControl: UIRefreshControl? = nil) {
         TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> () in
             self.tweets = tweets
+            print(self.tweets)
             self.tableView.reloadData()
             if let refreshControl = refreshControl {
                 refreshControl.endRefreshing()
@@ -38,7 +40,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func addRefresh() {
         refreshControl = UIRefreshControl()
-        refreshControl!.addTarget(self, action: "refreshCallback:", forControlEvents: .ValueChanged)
+        refreshControl?.addTarget(self, action: "refreshCallback", forControlEvents: .ValueChanged)
         tableView.insertSubview(refreshControl!, atIndex: 0)
     }
     

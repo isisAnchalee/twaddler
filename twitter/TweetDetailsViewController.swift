@@ -7,11 +7,6 @@
 //
 
 import UIKit
-@objc protocol TweetDetailsViewControllerDelegate {
-    optional func newTweetClicked(tweetDetailedViewController: TweetDetailsViewController, replyToTweet: Tweet?)
-    optional func favClicked(tweetDetailedViewController: TweetDetailsViewController, favTweet: Tweet?, completion: ((tweet: Tweet?, error: NSError?) -> ())?)
-    optional func retweetClicked(tweetDetailedViewController: TweetDetailsViewController, retweetTweet: Tweet?, completion: ((tweet: Tweet?, error: NSError?) -> ())?)
-}
 
 class TweetDetailsViewController: UIViewController {
     var tweet: Tweet!
@@ -57,6 +52,8 @@ class TweetDetailsViewController: UIViewController {
                     print(error?.description)
                 } else {
                     self.retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action-on-pressed.png")!)
+                    tweet!.retweeted = !tweet!.retweeted
+                    self.retweetCountLabel.text = String(tweet!.retweetCount)
                 }
             }
         } else {
@@ -65,10 +62,11 @@ class TweetDetailsViewController: UIViewController {
                     print(error?.description)
                 } else {
                     self.retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action.png")!)
+                    tweet!.retweeted = !tweet!.retweeted
+                    self.retweetCountLabel.text = String(tweet!.retweetCount + 1)
                 }
             }
         }
-        tweet.retweeted = !tweet.retweeted
     }
     
     func likeTapped(img: AnyObject) {
@@ -78,6 +76,8 @@ class TweetDetailsViewController: UIViewController {
                     print(error?.description)
                 } else {
                     self.likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action-on-pressed.png")!)
+                    tweet!.favorited = !tweet!.favorited
+                    self.favoriteLabel.text = String(tweet!.favCount)
                 }
             }
         } else {
@@ -86,10 +86,11 @@ class TweetDetailsViewController: UIViewController {
                     print(error?.description)
                 } else {
                     self.likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action.png")!)
+                    tweet!.favorited = !tweet!.favorited
+                    self.favoriteLabel.text = String(tweet!.favCount + 1)
                 }
             }
         }
-        tweet.favorited = !tweet.favorited
     }
     
     func replyTapped(img: AnyObject){

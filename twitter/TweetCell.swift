@@ -81,6 +81,7 @@ class TweetCell: UITableViewCell {
         }
         replyImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/reply-action_0.png")!)
     }
+    
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

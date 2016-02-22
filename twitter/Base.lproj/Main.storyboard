@@ -328,7 +328,7 @@
                             <constraint firstAttribute="trailing" secondItem="G9J-iK-fes" secondAttribute="trailing" constant="105" id="4P5-AT-nHt"/>
                             <constraint firstItem="EeM-XU-Dba" firstAttribute="leading" secondItem="99d-NQ-pP1" secondAttribute="trailing" constant="104" id="4cc-bN-22U"/>
                             <constraint firstItem="uoi-Fx-Nqs" firstAttribute="leading" secondItem="eIW-an-h1O" secondAttribute="trailing" constant="3" id="687-2F-sKh"/>
-                            <constraint firstAttribute="trailing" secondItem="JMS-kr-AUy" secondAttribute="trailing" constant="189" id="71C-My-wDr"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="JMS-kr-AUy" secondAttribute="trailing" constant="189" id="71C-My-wDr"/>
                             <constraint firstItem="99d-NQ-pP1" firstAttribute="top" secondItem="FgH-kG-P6g" secondAttribute="bottom" constant="15" id="Adc-5k-WjM"/>
                             <constraint firstItem="xzR-J0-oFc" firstAttribute="top" secondItem="RbV-kj-a0R" secondAttribute="bottom" constant="11" id="B7a-Za-U8J"/>
                             <constraint firstItem="JG8-z6-gk8" firstAttribute="leading" secondItem="ZMi-vw-e6d" secondAttribute="leading" constant="12" id="CFb-Ys-KRU"/>
@@ -401,15 +401,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q8d-ri-N6V">
                                 <rect key="frame" x="14" y="87" width="50" height="50"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sug-wH-v7h">
-                                <rect key="frame" x="72" y="87" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTJ-x8-MZA">
-                                <rect key="frame" x="72" y="111" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Isis Anchalee" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sug-wH-v7h">
+                                <rect key="frame" x="70" y="91" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -419,6 +413,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@isisAnchalee" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTJ-x8-MZA">
+                                <rect key="frame" x="70" y="109" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.74398828080000001" green="0.74398828080000001" blue="0.74398828080000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
