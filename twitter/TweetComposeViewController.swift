@@ -8,12 +8,14 @@
 
 import UIKit
 
-class TweetComposeViewController: UIViewController {
+class TweetComposeViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var tweetTextView: UITextView!
-
+    @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var tweetBtn: UIButton!
+    
     @IBAction func backButtonPressed(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)
     }
@@ -37,6 +39,8 @@ class TweetComposeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tweetTextView.delegate = self
+        tweetTextView.becomeFirstResponder()
         let user = User.currentUser
         profileImageView.setImageWithURL((user!.profileURL ?? NSURL(string:"http://placekitten.com/40/40"))!)
         nameLabel.text = user?.name
@@ -55,6 +59,18 @@ class TweetComposeViewController: UIViewController {
         }
     }
     
+    func textViewDidChange(textView: UITextView) {
+        let counter = 140 - tweetTextView.text.characters.count
+        counterLabel.text = "\(counter)"
+        if counter < 0 {
+            counterLabel.textColor = UIColor.redColor()
+            tweetBtn.backgroundColor = UIColor.lightGrayColor()
+            tweetBtn.enabled = false
+        } else {
+            counterLabel.textColor = UIColor.lightGrayColor()
+            tweetBtn.enabled = true
+        }
+    }
 
     /*
     // MARK: - Navigation
