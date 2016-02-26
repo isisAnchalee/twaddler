@@ -25,6 +25,7 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var imageTopMargin: NSLayoutConstraint!
     @IBOutlet weak var nameTopMargin: NSLayoutConstraint!
     @IBOutlet weak var usernameTopMargin: NSLayoutConstraint!
+    @IBOutlet weak var timeAgoTopMargin: NSLayoutConstraint!
     
     
     
@@ -56,15 +57,17 @@ class TweetCell: UITableViewCell {
     
     func setInitialConstraints(){
         retweetLabel.hidden = false
-        imageTopMargin.constant = 23
+        imageTopMargin.constant = 26
         nameTopMargin.constant = 23
         usernameTopMargin.constant = 23
+        timeAgoTopMargin.constant = 23
     }
     
     func adjustConstraints(){
         retweetLabel.hidden = true
-        imageTopMargin.constant = 10
+        imageTopMargin.constant = 13
         nameTopMargin.constant = 10
+        timeAgoTopMargin.constant = 10
         usernameTopMargin.constant = 10
     }
     
