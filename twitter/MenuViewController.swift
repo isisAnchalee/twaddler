@@ -12,12 +12,21 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     private var profileViewController: UIViewController!
     private var tweetsViewController: UIViewController!
-    var viewControllers: [ViewController] = []
+    var viewControllers: [UIViewController] = []
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        // Do any additional setup after loading the view.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
+        tweetsViewController = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController")
+        viewControllers.append(profileViewController)
+        viewControllers.append(tweetsViewController)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +34,17 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("MenuCell") as! MenuCell
+        let titles = ["Profile", "Home Timeline"]
+        cell.menuTitleLabel.text = titles[indexPath.row]
+        return cell
+    }
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
     /*
     // MARK: - Navigation
 
