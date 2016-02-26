@@ -17,8 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let vc = storyboard.instantiateViewControllerWithIdentifier("hamburgerviewcontroller")as UIViewController
-                    window?.rootViewController = vc
+        let hamburgervc = storyboard.instantiateViewControllerWithIdentifier("hamburgerviewcontroller")as UIViewController
+        window?.rootViewController = hamburgervc
+        
+        let hamburgerViewcontroller = hamburgervc as! HamburgerViewController
+        let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController")
+        
+        hamburgerViewcontroller.menuViewController = menuViewController
+        
 
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
 //        
