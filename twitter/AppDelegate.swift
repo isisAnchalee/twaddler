@@ -25,11 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         menuViewController.hamburgerViewController = hamburgerViewcontroller
         hamburgerViewcontroller.menuViewController = menuViewController
-
+        let navigationController = UINavigationController(rootViewController: hamburgerViewcontroller)
         
         if User.currentUser != nil{
-            let vc = storyboard.instantiateViewControllerWithIdentifier("navigationviewcontroller")as UIViewController
-            window?.rootViewController = hamburgerViewcontroller
+            window?.rootViewController = navigationController
         } else {
             let vc = storyboard.instantiateViewControllerWithIdentifier("loginViewController")as UIViewController
             window?.rootViewController = vc
