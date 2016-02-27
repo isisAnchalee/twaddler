@@ -17,7 +17,7 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var menuView: UIView!
     
-    var menuViewController: UIViewController!{
+    var menuViewController: UINavigationController!{
         didSet(oldContentViewController){
             view.layoutIfNeeded()
             if oldContentViewController != nil{
@@ -30,7 +30,7 @@ class HamburgerViewController: UIViewController {
         }
     }
     
-    var contentViewController: UIViewController!{
+    var contentViewController: UINavigationController!{
         didSet(oldContentViewController){
             view.layoutIfNeeded()
             if oldContentViewController != nil{

@@ -18,17 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
+        
+        
         let hamburgervc = storyboard.instantiateViewControllerWithIdentifier("hamburgerviewcontroller") as UIViewController
-        window?.rootViewController = hamburgervc
+
         let hamburgerViewcontroller = hamburgervc as! HamburgerViewController
         let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+        
+        let menuNavController = UINavigationController(rootViewController: menuViewController)
+        
 
         menuViewController.hamburgerViewController = hamburgerViewcontroller
-        hamburgerViewcontroller.menuViewController = menuViewController
-        let navigationController = UINavigationController(rootViewController: hamburgerViewcontroller)
-        
+        hamburgerViewcontroller.menuViewController = menuNavController
+
         if User.currentUser != nil{
-            window?.rootViewController = navigationController
+            window?.rootViewController = hamburgerViewcontroller
         } else {
             let vc = storyboard.instantiateViewControllerWithIdentifier("loginViewController")as UIViewController
             window?.rootViewController = vc

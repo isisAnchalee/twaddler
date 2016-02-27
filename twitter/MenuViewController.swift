@@ -12,7 +12,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     private var profileViewController: UIViewController!
     private var tweetsViewController: UIViewController!
-    var viewControllers: [UIViewController] = []
+    var viewControllers: [UINavigationController] = []
     @IBOutlet weak var tableView: UITableView!
     var hamburgerViewController: HamburgerViewController!
     let titles = ["Home Timeline", "Profile"]
@@ -50,10 +50,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
         tweetsViewController = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController")
-        
-        viewControllers.append(profileViewController)
-        viewControllers.append(tweetsViewController)
-        hamburgerViewController.contentViewController = tweetsViewController
+        let profileNavController = UINavigationController(rootViewController: profileViewController)
+        let tweetsNavController = UINavigationController(rootViewController: tweetsViewController)
+        viewControllers.append(profileNavController)
+        viewControllers.append(tweetsNavController)
+        hamburgerViewController.contentViewController = tweetsNavController
     }
     
     /*
