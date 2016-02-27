@@ -16,22 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        let hamburgervc = storyboard.instantiateViewControllerWithIdentifier("hamburgerviewcontroller")as UIViewController
-        window?.rootViewController = hamburgervc
-        
-        let hamburgerViewcontroller = hamburgervc as! HamburgerViewController
-        let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController")
-        
-        hamburgerViewcontroller.menuViewController = menuViewController
-        
 
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
-//        
-//        if User.currentUser != nil{
-//            let vc = storyboard.instantiateViewControllerWithIdentifier("navigationviewcontroller")as UIViewController
-//            window?.rootViewController = vc
-//        }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
+        let hamburgervc = storyboard.instantiateViewControllerWithIdentifier("hamburgerviewcontroller") as UIViewController
+        window?.rootViewController = hamburgervc
+        let hamburgerViewcontroller = hamburgervc as! HamburgerViewController
+        let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+
+        menuViewController.hamburgerViewController = hamburgerViewcontroller
+        hamburgerViewcontroller.menuViewController = menuViewController
+
+        
+        if User.currentUser != nil{
+            let vc = storyboard.instantiateViewControllerWithIdentifier("navigationviewcontroller")as UIViewController
+            window?.rootViewController = hamburgerViewcontroller
+        } else {
+            let vc = storyboard.instantiateViewControllerWithIdentifier("loginViewController")as UIViewController
+            window?.rootViewController = vc
+        }
+
         return true
     }
     

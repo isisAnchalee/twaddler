@@ -13,20 +13,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private var profileViewController: UIViewController!
     private var tweetsViewController: UIViewController!
     var viewControllers: [UIViewController] = []
-    
     @IBOutlet weak var tableView: UITableView!
+    var hamburgerViewController: HamburgerViewController!
+    let titles = ["Home Timeline", "Profile"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
-        tweetsViewController = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController")
-        viewControllers.append(profileViewController)
-        viewControllers.append(tweetsViewController)
-        
+        setupMenu()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +31,31 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MenuCell") as! MenuCell
-        let titles = ["Profile", "Home Timeline"]
+        
         cell.menuTitleLabel.text = titles[indexPath.row]
         return cell
     }
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return titles.count
     }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        hamburgerViewController.contentViewController = viewControllers[indexPath.row]
+    }
+    
+    func setupMenu(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
+        tweetsViewController = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController")
+        
+        viewControllers.append(profileViewController)
+        viewControllers.append(tweetsViewController)
+        hamburgerViewController.contentViewController = tweetsViewController
+    }
+    
     /*
     // MARK: - Navigation
 

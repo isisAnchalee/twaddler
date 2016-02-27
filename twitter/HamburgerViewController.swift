@@ -13,23 +13,50 @@ class HamburgerViewController: UIViewController {
     @IBOutlet weak var leftMarginConstraint: NSLayoutConstraint!
     
     var originalLeftMargin: CGFloat!
-
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var menuView: UIView!
     
     var menuViewController: UIViewController!{
-        didSet{
+        didSet(oldContentViewController){
             view.layoutIfNeeded()
+            if oldContentViewController != nil{
+                oldContentViewController.willMoveToParentViewController(nil)
+                oldContentViewController.view.removeFromSuperview()
+                oldContentViewController.didMoveToParentViewController(nil)
+                
+            }
             menuView.addSubview(menuViewController.view)
         }
     }
-
+    
+    var contentViewController: UIViewController!{
+        didSet(oldContentViewController){
+            view.layoutIfNeeded()
+            if oldContentViewController != nil{
+                oldContentViewController.willMoveToParentViewController(nil)
+                oldContentViewController.view.removeFromSuperview()
+                oldContentViewController.didMoveToParentViewController(nil)
+                
+            }
+            contentViewController.willMoveToParentViewController(self)
+            contentView.addSubview(contentViewController.view)
+            contentViewController.didMoveToParentViewController(self)
+            closeMenu()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func closeMenu(){
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.leftMarginConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }
     }
 
     @IBAction func onSwipe(sender: UIPanGestureRecognizer) {
@@ -53,6 +80,7 @@ class HamburgerViewController: UIViewController {
         }
         
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
