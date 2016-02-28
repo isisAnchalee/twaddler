@@ -27,6 +27,7 @@ class TweetDetailsViewController: UIViewController {
         super.viewDidLoad()
         setupViewData()
         setupGestures()
+        addTapGestureToPhoto()
     }
 
     override func didReceiveMemoryWarning() {
@@ -117,6 +118,23 @@ class TweetDetailsViewController: UIViewController {
         profileImageView.clipsToBounds = true
         setupIcons()
     }
+    
+    func addTapGestureToPhoto(){
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        profileImageView.userInteractionEnabled = true
+        profileImageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func imageTapped(img: AnyObject){
+        let params = ["user_id": tweet.user_id!]
+        TwitterClient.sharedInstance.getUserWithCompletion(params) { (user, error) -> () in
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            vc.user = user!
+            
+        }
+    }
+
     
     func bindDataToView(){
         usernameLabel.text = tweet.user!.name

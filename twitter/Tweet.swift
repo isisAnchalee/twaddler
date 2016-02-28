@@ -11,6 +11,7 @@ import UIKit
 class Tweet: NSObject {
     var id: Int?
     var user: User?
+    var user_id: Int?
     var text: String?
     var createdAtString: String?
     var createdAt: NSDate?
@@ -23,6 +24,7 @@ class Tweet: NSObject {
     
     init(dictionary: NSDictionary){
         user = User(dictionary: dictionary["user"] as! NSDictionary)
+        user_id = user!.id! as? Int
         text = dictionary["text"] as? String
         id = dictionary["id"] as? Int
         favorited = dictionary["favorited"] as? Bool ?? false

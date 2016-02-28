@@ -50,6 +50,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func setupMenu(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
+        let profVC = profileViewController as! ProfileViewController
+        profVC.user = User.currentUser!
         tweetsViewController = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController")
         let profileNavController = UINavigationController(rootViewController: profileViewController)
         let tweetsNavController = UINavigationController(rootViewController: tweetsViewController)

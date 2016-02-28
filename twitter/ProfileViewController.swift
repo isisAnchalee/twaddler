@@ -58,7 +58,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func populateTimeline(refreshControl: UIRefreshControl? = nil) {
-        let params = ["user_id": User.currentUser!.id!] as NSDictionary
+        let params = ["user_id": user.id!] as NSDictionary
         let url = "/1.1/statuses/user_timeline.json"
         TwitterClient.sharedInstance.getTimelineWithParams(nil, url: url, completion: { (tweets, error) -> () in
             self.tweets = tweets!
