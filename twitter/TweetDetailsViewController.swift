@@ -103,6 +103,7 @@ class TweetDetailsViewController: UIViewController {
             vc.tweetReplyUsername = tweet.user!.screenName
         }
     }
+    
     func replyTapped(img: AnyObject){
         if let tweet = tweet{
             let vc = storyboard?.instantiateViewControllerWithIdentifier("TweetComposeViewController") as! TweetComposeViewController!
@@ -126,8 +127,8 @@ class TweetDetailsViewController: UIViewController {
     }
     
     func imageTapped(img: AnyObject){
-        let params = ["user_id": tweet.user_id!]
-        TwitterClient.sharedInstance.getUserWithCompletion(params) { (user, error) -> () in
+        let params = ["user_id": tweet.retweetedID!]
+        TwitterClient.sharedInstance.getUserWithCompletion(params) { (user, error) -> () in            
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
             self.navigationController?.pushViewController(vc, animated: true)
             vc.user = user!
@@ -138,7 +139,8 @@ class TweetDetailsViewController: UIViewController {
     
     func bindDataToView(){
         usernameLabel.text = tweet.user!.name
-        screenNameLabel.text = tweet.user!.screenName
+        print("SECOND SN AND ID \(tweet.user!.screenName!)")
+        screenNameLabel.text = "@\(tweet.user!.screenName!)"
         dateLabel.text = DateManager.detailedFormatter.stringFromDate(tweet.createdAt!)
         tweetBodyLabel.text = tweet.text
         retweetCountLabel.text = String(tweet.retweetCount)
@@ -156,17 +158,15 @@ class TweetDetailsViewController: UIViewController {
     func setupIcons(){
         if tweet.favorited{
             likeImage.image = UIImage(named: "liked")
-//            likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action-on-pressed.png")!)
         } else {
             likeImage.image = UIImage(named: "like")
-//            likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action.png")!)
         }
         if tweet.retweeted{
-            retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action-on-pressed.png")!)
+            retweetImage.image = UIImage(named: "retweeted")
         }else{
-            retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action.png")!)
+            retweetImage.image = UIImage(named: "retweet")
         }
-        backImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/reply-action_0.png")!)
+        backImage.image = UIImage(named: "reply")
     }
     
     /*

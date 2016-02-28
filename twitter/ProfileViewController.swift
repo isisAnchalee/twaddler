@@ -63,7 +63,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let url = "/1.1/statuses/user_timeline.json"
         TwitterClient.sharedInstance.getTimelineWithParams(params, url: url, completion: { (tweets, error) -> () in
             self.tweets = tweets!
-            print(self.tweets)
             self.tableView.reloadData()
             if let refreshControl = refreshControl {
                 refreshControl.endRefreshing()

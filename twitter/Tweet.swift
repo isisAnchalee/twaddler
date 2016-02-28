@@ -21,14 +21,18 @@ class Tweet: NSObject {
     var retweeted = false
     var retweetCount = 0
     var favCount = 0
+    var screenName: String?
+    var retweetedID: Int?
+    
     
     init(dictionary: NSDictionary){
         user = User(dictionary: dictionary["user"] as! NSDictionary)
-        user_id = user!.id! as? Int
+        user_id = user!.id!
         text = dictionary["text"] as? String
         id = dictionary["id"] as? Int
         favorited = dictionary["favorited"] as? Bool ?? false
         retweeted = dictionary["retweeted"] as? Bool ?? false
+        screenName = user!.screenName
         
         if let createdAtStr = dictionary["created_at"] as? String {
             createdAtString = createdAtStr
@@ -45,15 +49,17 @@ class Tweet: NSObject {
                 let retweetUser = User(dictionary: retweetUserDict)
                 retweetName = user!.name!
                 user = retweetUser
+                retweetedID = user?.id
             }
             if let textStr = retweetedStatus["text"] as? String{
                 text = textStr
             }
+        } else {
+            retweetedID = user_id
         }
         if let repliedTo = dictionary["in_reply_to_screen_name"] as? String {
             replyName = repliedTo
         }
-        
     }
     
     class func tweetsWithArray(array: [NSDictionary]) -> [Tweet] {

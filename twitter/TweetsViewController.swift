@@ -31,7 +31,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let url = "/1.1/statuses/home_timeline.json"
         TwitterClient.sharedInstance.getTimelineWithParams(nil, url: url, completion: { (tweets, error) -> () in
             self.tweets = tweets
-            print(self.tweets)
             self.tableView.reloadData()
             if let refreshControl = refreshControl {
                 refreshControl.endRefreshing()

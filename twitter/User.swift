@@ -50,7 +50,6 @@ class User {
     func getLargeImageUrl(){
         let regex = try! NSRegularExpression(pattern: "_normal", options:.CaseInsensitive)
         let largerProfileURLString = regex.stringByReplacingMatchesInString(profileURLString!, options: [], range: NSRange(0..<profileURLString!.utf16.count), withTemplate: "")
-        print(largerProfileURLString)
         self.profileURL = NSURL(string: largerProfileURLString)
     }
     

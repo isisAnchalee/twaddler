@@ -55,17 +55,17 @@
                                     <constraint firstAttribute="width" constant="320" id="eF2-y1-tx7"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b46-Uh-H1T">
-                                <rect key="frame" x="116" y="77" width="88" height="80"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b46-Uh-H1T">
+                                <rect key="frame" x="116" y="77" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="88" id="0Tx-vp-IHq"/>
                                     <constraint firstAttribute="height" constant="80" id="cDF-kz-mG4"/>
+                                    <constraint firstAttribute="width" constant="80" id="ziW-AX-Ji2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isis Anchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkr-AA-ur2">
                                 <rect key="frame" x="110" y="159" width="101" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ad-jV-MnC">
@@ -94,7 +94,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@isisAnchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlb-4C-29A">
                                 <rect key="frame" x="112" y="176" width="105" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TWEETS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSW-ZC-rH5">
@@ -112,26 +112,26 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1903" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vF2-ui-DWz">
                                 <rect key="frame" x="26" y="216" width="27" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1903" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq9-Ac-owL">
                                 <rect key="frame" x="128" y="215" width="27" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1903" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvc-gB-ymL">
                                 <rect key="frame" x="238" y="215" width="27" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="usx-CC-4bO">
-                                <rect key="frame" x="0.0" y="246" width="320" height="326"/>
+                                <rect key="frame" x="0.0" y="245" width="320" height="323"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="326" id="JfW-WD-WDH"/>
+                                    <constraint firstAttribute="height" constant="323" id="JfW-WD-WDH"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="115" id="fJy-TM-6E0" customClass="TweetCell" customModule="twitter" customModuleProvider="target">
@@ -150,7 +150,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isis Anchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWJ-2V-Qww">
                                                     <rect key="frame" x="58" y="23" width="83.5" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💪 Isis Anchalee retweeted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wf1-bh-DYa">
@@ -175,7 +175,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Did you know you can tell if a programmer simply by saying the word timezones" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JI5-oS-SJD">
                                                     <rect key="frame" x="58" y="39" width="229" height="44.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LIj-qc-Mux">
@@ -256,14 +256,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="usx-CC-4bO" firstAttribute="leading" secondItem="VCI-y5-TMh" secondAttribute="leading" id="1xt-vJ-0iX"/>
-                            <constraint firstItem="usx-CC-4bO" firstAttribute="top" secondItem="1ad-jV-MnC" secondAttribute="bottom" constant="2" id="3gP-5M-qmh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="b46-Uh-H1T" secondAttribute="trailing" constant="100" id="8Fp-s2-Wf4"/>
+                            <constraint firstItem="usx-CC-4bO" firstAttribute="top" secondItem="1ad-jV-MnC" secondAttribute="bottom" constant="1" id="3gP-5M-qmh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b46-Uh-H1T" secondAttribute="trailing" constant="104" id="8Fp-s2-Wf4"/>
                             <constraint firstItem="hkr-AA-ur2" firstAttribute="top" secondItem="b46-Uh-H1T" secondAttribute="bottom" constant="2" id="8lj-B7-5WT"/>
                             <constraint firstAttribute="trailing" secondItem="hkr-AA-ur2" secondAttribute="trailing" constant="109" id="9rj-Wm-HRC"/>
                             <constraint firstItem="cq9-Ac-owL" firstAttribute="leading" secondItem="vF2-ui-DWz" secondAttribute="trailing" constant="75" id="Bva-1J-1dx"/>
                             <constraint firstItem="aez-Cr-4OU" firstAttribute="leading" secondItem="LSW-ZC-rH5" secondAttribute="trailing" constant="60" id="CQt-H2-lG5"/>
                             <constraint firstItem="Ych-rU-emU" firstAttribute="top" secondItem="AhV-yA-kKc" secondAttribute="bottom" constant="17" id="HJd-63-3oR"/>
-                            <constraint firstItem="b46-Uh-H1T" firstAttribute="leading" secondItem="VCI-y5-TMh" secondAttribute="leadingMargin" constant="100" id="Jq4-Rr-kCK"/>
                             <constraint firstItem="aez-Cr-4OU" firstAttribute="top" secondItem="AhV-yA-kKc" secondAttribute="bottom" constant="17" id="KFL-8Q-0on"/>
                             <constraint firstItem="rlb-4C-29A" firstAttribute="leading" secondItem="VCI-y5-TMh" secondAttribute="leading" constant="112" id="MXy-Pu-jJD"/>
                             <constraint firstAttribute="trailing" secondItem="usx-CC-4bO" secondAttribute="trailing" id="Naw-Of-AnX"/>
@@ -334,7 +333,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="@isisAnchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLh-ah-X5n">
-                                                    <rect key="frame" x="148" y="23" width="92" height="14.5"/>
+                                                    <rect key="frame" x="148" y="23" width="82" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.72286076570680624" green="0.72286076570680624" blue="0.72286076570680624" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -342,7 +341,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isis Anchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKI-I9-cBg">
                                                     <rect key="frame" x="58" y="23" width="83.5" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💪 Isis Anchalee retweeted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdB-eE-ckO">
@@ -351,8 +350,8 @@
                                                     <color key="textColor" red="0.72286076570000002" green="0.72286076570000002" blue="0.72286076570000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="14h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClS-Aa-eou">
-                                                    <rect key="frame" x="278" y="22" width="17.5" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClS-Aa-eou">
+                                                    <rect key="frame" x="275" y="22" width="17.5" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" red="0.72286076570000002" green="0.72286076570000002" blue="0.72286076570000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -365,9 +364,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" misplaced="YES" text="Did you know you can tell if a programmer simply by saying the word timezones" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IT4-GX-D71">
-                                                    <rect key="frame" x="58" y="39.5" width="229" height="43.5"/>
+                                                    <rect key="frame" x="58" y="39" width="229" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENg-cs-QSR">
@@ -393,12 +392,13 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="ClS-Aa-eou" firstAttribute="leading" relation="lessThanOrEqual" secondItem="wLh-ah-X5n" secondAttribute="trailing" constant="45" id="1Ut-IC-Qeg"/>
                                                 <constraint firstItem="pKI-I9-cBg" firstAttribute="top" secondItem="KaZ-Az-hFQ" secondAttribute="top" constant="23" id="2N4-Lm-YUe"/>
                                                 <constraint firstItem="xdB-eE-ckO" firstAttribute="top" secondItem="KaZ-Az-hFQ" secondAttribute="top" constant="6" id="41B-hr-qpd"/>
                                                 <constraint firstItem="tDn-zp-Bur" firstAttribute="top" secondItem="KaZ-Az-hFQ" secondAttribute="top" constant="39" id="5H8-i1-eLn"/>
                                                 <constraint firstAttribute="bottom" secondItem="ToB-sD-Ptf" secondAttribute="bottom" constant="7.5" id="5fq-5a-pEy"/>
                                                 <constraint firstItem="tgt-Ja-f2a" firstAttribute="leading" secondItem="ToB-sD-Ptf" secondAttribute="trailing" constant="26" id="8T0-jg-qaV"/>
-                                                <constraint firstAttribute="trailing" secondItem="ClS-Aa-eou" secondAttribute="trailing" constant="-8.5" id="FJB-0H-w9w"/>
+                                                <constraint firstAttribute="trailing" secondItem="ClS-Aa-eou" secondAttribute="trailing" constant="-6" id="FJB-0H-w9w"/>
                                                 <constraint firstItem="xdB-eE-ckO" firstAttribute="leading" secondItem="KaZ-Az-hFQ" secondAttribute="leading" constant="16" id="GIa-Tg-dth"/>
                                                 <constraint firstAttribute="trailing" secondItem="ENg-cs-QSR" secondAttribute="trailing" constant="124" id="Nsg-W0-SM2"/>
                                                 <constraint firstItem="wLh-ah-X5n" firstAttribute="leading" secondItem="pKI-I9-cBg" secondAttribute="trailing" constant="6" id="R0Z-Mz-sEM"/>
@@ -417,9 +417,6 @@
                                                 <constraint firstItem="tgt-Ja-f2a" firstAttribute="top" secondItem="IT4-GX-D71" secondAttribute="bottom" constant="5" id="v3P-Mc-4gj"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="wLh-ah-X5n" secondAttribute="width" constant="228" id="hFl-I6-l6q"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="imageTopMargin" destination="5H8-i1-eLn" id="nNm-wI-DJF"/>
                                             <outlet property="likeImage" destination="ENg-cs-QSR" id="8dZ-BP-aQf"/>
@@ -549,7 +546,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="Isis Anchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60I-6T-kFv">
                                 <rect key="frame" x="68" y="111" width="97" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JG8-z6-gk8">
@@ -567,7 +564,7 @@
                                     <constraint firstAttribute="width" constant="288" id="bMa-vL-DQi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" misplaced="YES" text=" 💪 waffletchnlgy retweeted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9J-iK-fes">
@@ -620,13 +617,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1592" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIW-an-h1O">
                                 <rect key="frame" x="12" y="250" width="34" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1592" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nII-Tb-gnI">
                                 <rect key="frame" x="131" y="250" width="34" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LIKES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzR-J0-oFc">
@@ -741,7 +738,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Isis Anchalee" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sug-wH-v7h">
                                 <rect key="frame" x="72" y="48" width="106" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@isisAnchalee" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTJ-x8-MZA">
@@ -826,7 +823,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ika-oN-SrT">
                                                     <rect key="frame" x="8" y="20" width="312" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
