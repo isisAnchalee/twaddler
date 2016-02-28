@@ -1,3 +1,4 @@
+
 //
 //  ProfileViewController.swift
 //  twitter
@@ -9,7 +10,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var user: User = User.currentUser!
+    var user: User?
     var tweets: [Tweet] = []
     
     @IBOutlet weak var tableView: UITableView!
@@ -58,9 +59,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func populateTimeline(refreshControl: UIRefreshControl? = nil) {
-        let params = ["user_id": user.id!] as NSDictionary
+        let params = ["user_id": user!.id!] as NSDictionary
         let url = "/1.1/statuses/user_timeline.json"
-        TwitterClient.sharedInstance.getTimelineWithParams(nil, url: url, completion: { (tweets, error) -> () in
+        TwitterClient.sharedInstance.getTimelineWithParams(params, url: url, completion: { (tweets, error) -> () in
             self.tweets = tweets!
             print(self.tweets)
             self.tableView.reloadData()
@@ -81,13 +82,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func bindDataToView(){
         formatName()
-        nameLabel.text = "\(user.name!)"
-        usernameLabel.text = "@\(user.screenName!)"
-        tweetCountLabel.text = "\(user.tweetCount!)"
-        followingCountLabel.text = "\(user.following!)"
-        followersCountLabel.text = "\(user.followers!)"
-        userHeaderImage.setImageWithURL(user.profileBackgroundImageURL!)
-        profileImageView.setImageWithURL(user.profileURL!)
+        nameLabel.text = "\(user!.name!)"
+        usernameLabel.text = "@\(user!.screenName!)"
+        tweetCountLabel.text = "\(user!.tweetCount!)"
+        followingCountLabel.text = "\(user!.following!)"
+        followersCountLabel.text = "\(user!.followers!)"
+        userHeaderImage.setImageWithURL(user!.profileBackgroundImageURL!)
+        profileImageView.setImageWithURL(user!.profileURL!)
     }
     
     func formatName(){
