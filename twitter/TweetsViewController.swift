@@ -82,9 +82,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func setupNavIcon(){
-        let image = UIImage(named: "white-logo.png")
+        let image = UIImage(named: "Twitter_logo_white_32")
         self.navigationItem.titleView = UIImageView(image: image)
-    }    
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let cell = sender as? UITableViewCell {
             let indexPath = tableView.indexPathForCell(cell)

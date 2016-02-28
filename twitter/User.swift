@@ -24,8 +24,9 @@ class User {
     var following: Int?
     var tweets: Int?
     var id: Int?
-    var tweetCount: Int?
-    var profileBackgroundImage: NSURL?
+    var tweetCount: String?
+    var profileBackgroundImageURL: NSURL?
+    var profileURLString: String?
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
@@ -35,9 +36,22 @@ class User {
         description = dictionary["description"] as? String
         followers = dictionary["followers_count"] as? Int
         following = dictionary["following"] as? Int
-        profileURL = NSURL(string: dictionary["profile_image_url_https"] as! String)
-        tweetCount = dictionary["statuses_count"] as? Int
-        profileBackgroundImage = NSURL(string: dictionary["profile_background_image_url"] as! String)
+        profileURLString = dictionary["profile_image_url_https"] as? String
+        if let status_count = dictionary["statuses_count"]{
+            tweetCount = "\(status_count)"
+        }
+        if let backgroundImageUrl = dictionary["profile_background_image_url_https"]{
+            profileBackgroundImageURL = NSURL(string: backgroundImageUrl as! String)
+        }
+        getLargeImageUrl()
+    }
+    
+    
+    func getLargeImageUrl(){
+        let regex = try! NSRegularExpression(pattern: "_normal", options:.CaseInsensitive)
+        let largerProfileURLString = regex.stringByReplacingMatchesInString(profileURLString!, options: [], range: NSRange(0..<profileURLString!.utf16.count), withTemplate: "")
+        print(largerProfileURLString)
+        self.profileURL = NSURL(string: largerProfileURLString)
     }
     
     func logout(){

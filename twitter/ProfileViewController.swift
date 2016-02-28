@@ -29,9 +29,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.estimatedRowHeight = 120
         bindDataToView()
         populateTimeline()
+        profileImageView.layer.cornerRadius = 5
+        profileImageView.clipsToBounds = true
+        setupNavIcon()
         // Do any additional setup after loading the view.
     }
-
+    
+    func setupNavIcon(){
+        let image = UIImage(named: "Twitter_logo_white_32")
+        self.navigationItem.titleView = UIImageView(image: image)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,11 +80,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func bindDataToView(){
-        nameLabel.text = user.name!
-        usernameLabel.text = user.screenName!
+        nameLabel.text = "\(user.name!)"
+        usernameLabel.text = "@\(user.screenName!)"
+        nameLabel.textColor = UIColor.whiteColor()
+        usernameLabel.textColor = UIColor.whiteColor()
         tweetCountLabel.text = "\(user.tweetCount!)"
         followingCountLabel.text = "\(user.following!)"
         followersCountLabel.text = "\(user.followers!)"
+        userHeaderImage.setImageWithURL(user.profileBackgroundImageURL!)
+        profileImageView.setImageWithURL(user.profileURL!)
     }
 
     /*

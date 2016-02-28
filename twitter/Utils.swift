@@ -16,4 +16,7 @@ class Utils {
         navBar.tintColor = UIColor.whiteColor()
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
+    class func setupNavIcon(){
+        
+    }
 }
