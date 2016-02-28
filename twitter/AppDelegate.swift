@@ -18,26 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
-        
-        
-        let hamburgervc = storyboard.instantiateViewControllerWithIdentifier("hamburgerviewcontroller") as UIViewController
 
-        let hamburgerViewcontroller = hamburgervc as! HamburgerViewController
-        let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
-        
-        let menuNavController = UINavigationController(rootViewController: menuViewController)
-        
-
-        menuViewController.hamburgerViewController = hamburgerViewcontroller
-        hamburgerViewcontroller.menuViewController = menuNavController
 
         if User.currentUser != nil{
+            let hamburgervc = storyboard.instantiateViewControllerWithIdentifier("hamburgerviewcontroller") as UIViewController
+            let hamburgerViewcontroller = hamburgervc as! HamburgerViewController
+            let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+            
+            let menuNavController = UINavigationController(rootViewController: menuViewController)
+            Utils.configureDefaultNavigationBar(menuNavController.navigationBar)
+            menuViewController.hamburgerViewController = hamburgerViewcontroller
+            hamburgerViewcontroller.menuViewController = menuNavController
             window?.rootViewController = hamburgerViewcontroller
         } else {
-            let vc = storyboard.instantiateViewControllerWithIdentifier("loginViewController")as UIViewController
+            let vc = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")as UIViewController
             window?.rootViewController = vc
         }
-
+        
         return true
     }
     

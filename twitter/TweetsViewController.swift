@@ -61,13 +61,23 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
-
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let detailsViewController = self.storyboard!.instantiateViewControllerWithIdentifier("TweetDetailsViewController") as! TweetDetailsViewController
+        
+        let tweet = tweets![indexPath.row]
+        detailsViewController.tweet = tweet
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.navigationController?.pushViewController(detailsViewController, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func onLogout(sender: AnyObject) {
+        let loginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
         User.currentUser?.logout()
     }
     

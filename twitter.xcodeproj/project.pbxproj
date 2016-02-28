@@ -25,6 +25,7 @@
 		B2F1CB101C77EDE600CABA89 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1CB0F1C77EDE600CABA89 /* User.swift */; };
 		B2F1CB131C77EDFA00CABA89 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1CB121C77EDFA00CABA89 /* Tweet.swift */; };
 		B2F1CB151C783AB100CABA89 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1CB141C783AB100CABA89 /* TweetsViewController.swift */; };
+		B2FA0A241C8278C50064A37B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FA0A231C8278C50064A37B /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B2F1CB0F1C77EDE600CABA89 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B2F1CB121C77EDFA00CABA89 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		B2F1CB141C783AB100CABA89 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
+		B2FA0A231C8278C50064A37B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				B2D6EAA71C7A77A000F59D47 /* DateManager.swift */,
+				B2FA0A231C8278C50064A37B /* Utils.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				B237AD251C7A8C960004FDA2 /* TweetDetailsViewController.swift in Sources */,
 				B237AD271C7ABFEA0004FDA2 /* TweetComposeViewController.swift in Sources */,
 				B24E08E31C80E65A000287A8 /* MenuViewController.swift in Sources */,
+				B2FA0A241C8278C50064A37B /* Utils.swift in Sources */,
 				B2F1CB131C77EDFA00CABA89 /* Tweet.swift in Sources */,
 				B24E08E91C80F4C0000287A8 /* HamburgerViewController.swift in Sources */,
 				B24E08E51C80E9AE000287A8 /* ProfileViewController.swift in Sources */,

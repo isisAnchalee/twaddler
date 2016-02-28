@@ -15,13 +15,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var viewControllers: [UINavigationController] = []
     @IBOutlet weak var tableView: UITableView!
     var hamburgerViewController: HamburgerViewController!
-    let titles = ["Home Timeline", "Profile"]
+    let titles = ["Profile", "Home Timeline"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         setupMenu()
+        self.title = "Menu"
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +42,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return titles.count
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         hamburgerViewController.contentViewController = viewControllers[indexPath.row]
     }
@@ -52,6 +53,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tweetsViewController = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController")
         let profileNavController = UINavigationController(rootViewController: profileViewController)
         let tweetsNavController = UINavigationController(rootViewController: tweetsViewController)
+        Utils.configureDefaultNavigationBar(profileNavController.navigationBar)
+        Utils.configureDefaultNavigationBar(tweetsNavController.navigationBar)
         viewControllers.append(profileNavController)
         viewControllers.append(tweetsNavController)
         hamburgerViewController.contentViewController = tweetsNavController
