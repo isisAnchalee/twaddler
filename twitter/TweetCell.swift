@@ -8,6 +8,10 @@
 
 import UIKit
 
+@objc protocol TweetCellDelegate {
+    optional func thumbImageClicked(tweet: Tweet?)
+}
+
 class TweetCell: UITableViewCell {
 
     @IBOutlet weak var retweetLabel: UILabel!
@@ -26,7 +30,7 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var nameTopMargin: NSLayoutConstraint!
     @IBOutlet weak var usernameTopMargin: NSLayoutConstraint!
     @IBOutlet weak var timeAgoTopMargin: NSLayoutConstraint!
-    
+    weak var delegate: TweetCellDelegate?
     
     
     var tweet: Tweet!{
@@ -49,10 +53,22 @@ class TweetCell: UITableViewCell {
         }
     }
     
+    func addTapGestureToPhoto(){
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("clickedProfileImage:"))
+        profileImageView.userInteractionEnabled = true
+        profileImageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+
+    func clickedProfileImage(sender: UITapGestureRecognizer){
+        print("clicked!!!")
+        delegate?.thumbImageClicked?(self.tweet)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         profileImageView.layer.cornerRadius = 5
         profileImageView.clipsToBounds = true
+        addTapGestureToPhoto()
     }
     
     func setInitialConstraints(){

@@ -47,6 +47,9 @@ class TweetComposeViewController: UIViewController, UITextViewDelegate {
         screenNameLabel.text = user?.screenName
         setupReply()
         counterLabel.text = "\(140 - tweetTextView.text.characters.count)"
+        profileImageView.layer.cornerRadius = 5
+        profileImageView.clipsToBounds = true
+        setupNavIcon()
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,7 +75,11 @@ class TweetComposeViewController: UIViewController, UITextViewDelegate {
             tweetBtn.enabled = true
         }
     }
-
+    
+    func setupNavIcon(){
+        let image = UIImage(named: "Twitter_logo_white_32")
+        self.navigationItem.titleView = UIImageView(image: image)
+    }
     /*
     // MARK: - Navigation
 

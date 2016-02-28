@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TweetCellDelegate {
 
     var tweets: [Tweet]? = []
     var refreshControl: UIRefreshControl!
@@ -22,6 +22,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
+        
         populateTimeline()
         addRefresh()
         setupNavIcon()
@@ -57,6 +58,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
         let tweet = tweets![indexPath.row]
         cell.tweet = tweet
+        cell.delegate = self
         return cell
     }
     
@@ -67,6 +69,11 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         detailsViewController.tweet = tweet
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.navigationController?.pushViewController(detailsViewController, animated: true)
+    }
+    
+    @IBAction func onNew(sender: AnyObject) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("TweetComposeViewController") as! TweetComposeViewController!
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,6 +90,17 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     func setupNavIcon(){
         let image = UIImage(named: "Twitter_logo_white_32")
         self.navigationItem.titleView = UIImageView(image: image)
+    }
+    
+    func thumbImageClicked(tweet: Tweet?){
+        print("CLICKED!!!")
+        let params = ["user_id": tweet!.retweetedID!]
+        TwitterClient.sharedInstance.getUserWithCompletion(params) { (user, error) -> () in
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            vc.user = user!
+            
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

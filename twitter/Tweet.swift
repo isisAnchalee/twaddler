@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class Tweet: NSObject {
     var id: Int?
     var user: User?

@@ -327,14 +327,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="115" id="Zvy-Vo-D2q" customClass="TweetCell" customModule="twitter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="115"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zvy-Vo-D2q" id="KaZ-Az-hFQ">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="114.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="@isisAnchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLh-ah-X5n">
-                                                    <rect key="frame" x="148" y="23" width="82" height="15"/>
+                                                    <rect key="frame" x="148" y="23" width="82" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.72286076570680624" green="0.72286076570680624" blue="0.72286076570680624" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -351,7 +351,7 @@
                                                     <color key="textColor" red="0.72286076570000002" green="0.72286076570000002" blue="0.72286076570000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClS-Aa-eou">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="14h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClS-Aa-eou">
                                                     <rect key="frame" x="275" y="22" width="17.5" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" red="0.72286076570000002" green="0.72286076570000002" blue="0.72286076570000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -393,7 +393,7 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ClS-Aa-eou" firstAttribute="leading" relation="lessThanOrEqual" secondItem="wLh-ah-X5n" secondAttribute="trailing" constant="45" id="1Ut-IC-Qeg"/>
+                                                <constraint firstItem="ClS-Aa-eou" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wLh-ah-X5n" secondAttribute="trailing" constant="5" id="1Ut-IC-Qeg"/>
                                                 <constraint firstItem="pKI-I9-cBg" firstAttribute="top" secondItem="KaZ-Az-hFQ" secondAttribute="top" constant="23" id="2N4-Lm-YUe"/>
                                                 <constraint firstItem="xdB-eE-ckO" firstAttribute="top" secondItem="KaZ-Az-hFQ" secondAttribute="top" constant="6" id="41B-hr-qpd"/>
                                                 <constraint firstItem="tDn-zp-Bur" firstAttribute="top" secondItem="KaZ-Az-hFQ" secondAttribute="top" constant="39" id="5H8-i1-eLn"/>
@@ -461,6 +461,9 @@
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New"/>
+                                <connections>
+                                    <action selector="onNew:" destination="SZ2-v8-89Y" eventType="touchUpInside" id="IPB-8N-PPc"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -470,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n3r-dZ-oir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1460" y="84"/>
+            <point key="canvasLocation" x="1950" y="100"/>
         </scene>
         <!--hamburgerviewcontroller-->
         <scene sceneID="Z6a-cv-yCg">
@@ -796,7 +799,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0l-In-DXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572" y="713"/>
+            <point key="canvasLocation" x="2104" y="713"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="Udz-cD-e4k">
@@ -882,7 +885,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeN-LI-Rxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2219" y="-400"/>
+            <point key="canvasLocation" x="2751" y="-400"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mu6-zy-62j">
@@ -901,6 +904,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfa-UG-TOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1021" y="-717"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kIK-TA-g8c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YYG-PK-gPg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oQr-fg-nwn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SZ2-v8-89Y" kind="relationship" relationship="rootViewController" id="yJ1-Sl-cg0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pOS-bN-6mR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1418" y="100"/>
         </scene>
     </scenes>
 </document>

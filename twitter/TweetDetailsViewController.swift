@@ -28,6 +28,7 @@ class TweetDetailsViewController: UIViewController {
         setupViewData()
         setupGestures()
         addTapGestureToPhoto()
+        setupNavIcon()
     }
 
     override func didReceiveMemoryWarning() {
@@ -138,7 +139,6 @@ class TweetDetailsViewController: UIViewController {
     
     func bindDataToView(){
         usernameLabel.text = tweet.user!.name
-        print("SECOND SN AND ID \(tweet.user!.screenName!)")
         screenNameLabel.text = "@\(tweet.user!.screenName!)"
         dateLabel.text = DateManager.detailedFormatter.stringFromDate(tweet.createdAt!)
         tweetBodyLabel.text = tweet.text
@@ -152,6 +152,11 @@ class TweetDetailsViewController: UIViewController {
         } else {
             retweetLabel.hidden = true
         }
+    }
+    
+    func setupNavIcon(){
+        let image = UIImage(named: "Twitter_logo_white_32")
+        self.navigationItem.titleView = UIImageView(image: image)
     }
     
     func setupIcons(){

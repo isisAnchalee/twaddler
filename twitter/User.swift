@@ -41,7 +41,12 @@ class User {
             tweetCount = "\(status_count)"
         }
         if let backgroundImageUrl = dictionary["profile_background_image_url_https"]{
-            profileBackgroundImageURL = NSURL(string: backgroundImageUrl as! String)
+            if let backgroundImageUrl = backgroundImageUrl as? String{
+                profileBackgroundImageURL = NSURL(string: backgroundImageUrl as! String)
+            } else {
+                profileBackgroundImageURL = NSURL(string: "https://i.ytimg.com/vi/0Mz_LhuSNAw/maxresdefault.jpg")
+            }
+            
         }
         getLargeImageUrl()
     }
