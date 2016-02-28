@@ -27,8 +27,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
-        
-         populateTimeline()
+        bindDataToView()
+        populateTimeline()
         // Do any additional setup after loading the view.
     }
 
@@ -62,12 +62,21 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let detailsViewController = self.storyboard!.instantiateViewControllerWithIdentifier("TweetDetailsViewController") as! TweetDetailsViewController
+        
+        let tweet = tweets[indexPath.row]
+        detailsViewController.tweet = tweet
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.navigationController?.pushViewController(detailsViewController, animated: true)
+    }
+    
     func bindDataToView(){
         nameLabel.text = user.name!
         usernameLabel.text = user.screenName!
-        tweetCountLabel.text = "\(user.tweets)"
-        followingCountLabel.text = "\(user.following)"
-        followersCountLabel.text = "\(user.followers)"
+        tweetCountLabel.text = "\(user.tweetCount!)"
+        followingCountLabel.text = "\(user.following!)"
+        followersCountLabel.text = "\(user.followers!)"
     }
 
     /*

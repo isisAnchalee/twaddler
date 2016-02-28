@@ -24,6 +24,8 @@ class User {
     var following: Int?
     var tweets: Int?
     var id: Int?
+    var tweetCount: Int?
+    var profileBackgroundImage: NSURL?
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
@@ -34,7 +36,8 @@ class User {
         followers = dictionary["followers_count"] as? Int
         following = dictionary["following"] as? Int
         profileURL = NSURL(string: dictionary["profile_image_url_https"] as! String)
-        
+        tweetCount = dictionary["statuses_count"] as? Int
+        profileBackgroundImage = NSURL(string: dictionary["profile_background_image_url"] as! String)
     }
     
     func logout(){

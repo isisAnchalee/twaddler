@@ -137,11 +137,11 @@ class TweetDetailsViewController: UIViewController {
     
     func setupIcons(){
         if tweet.favorited{
-//            likeImage.image = UIImage(named: "liked")
-            likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action-on-pressed.png")!)
+            likeImage.image = UIImage(named: "liked")
+//            likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action-on-pressed.png")!)
         } else {
-//            likeImage.image = UIImage(named: "like")
-            likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action.png")!)
+            likeImage.image = UIImage(named: "like")
+//            likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action.png")!)
         }
         if tweet.retweeted{
             retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action-on-pressed.png")!)

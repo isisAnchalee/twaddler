@@ -24,8 +24,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.estimatedRowHeight = 120
         populateTimeline()
         addRefresh()
-        
-//        setupNavIcon()
+        setupNavIcon()
     }
     
     func populateTimeline(refreshControl: UIRefreshControl? = nil) {
@@ -83,11 +82,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func setupNavIcon(){
-        let logo = UIImage(named: "retweet")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
-    }
-    
+        let image = UIImage(named: "white-logo.png")
+        self.navigationItem.titleView = UIImageView(image: image)
+    }    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let cell = sender as? UITableViewCell {
             let indexPath = tableView.indexPathForCell(cell)
