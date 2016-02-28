@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TweetCellDelegate{
     var user: User?
     var tweets: [Tweet] = []
     
@@ -51,11 +51,22 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
         let tweet = tweets[indexPath.row]
         cell.tweet = tweet
+        cell.delegate = self
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return tweets.count ?? 0
+    }
+    
+    func thumbImageClicked(tweet: Tweet?){
+        let params = ["user_id": tweet!.retweetedID!]
+        TwitterClient.sharedInstance.getUserWithCompletion(params) { (user, error) -> () in
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            vc.user = user!
+            
+        }
     }
     
     func populateTimeline(refreshControl: UIRefreshControl? = nil) {
