@@ -16,7 +16,9 @@ class Utils {
         navBar.tintColor = UIColor.whiteColor()
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
-    class func setupNavIcon(){
-        
+    
+    class func setupNavIcon(navController: UINavigationController){
+        let image = UIImage(named: "Twitter_logo_white_32")
+        navController.navigationItem.titleView = UIImageView(image: image)
     }
 }

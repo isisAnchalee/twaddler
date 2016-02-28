@@ -58,6 +58,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b46-Uh-H1T">
                                 <rect key="frame" x="116" y="77" width="88" height="80"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="0Tx-vp-IHq"/>
                                     <constraint firstAttribute="height" constant="80" id="cDF-kz-mG4"/>
                                 </constraints>
                             </imageView>

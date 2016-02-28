@@ -80,15 +80,27 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func bindDataToView(){
+        formatName()
         nameLabel.text = "\(user.name!)"
         usernameLabel.text = "@\(user.screenName!)"
-        nameLabel.textColor = UIColor.whiteColor()
-        usernameLabel.textColor = UIColor.whiteColor()
         tweetCountLabel.text = "\(user.tweetCount!)"
         followingCountLabel.text = "\(user.following!)"
         followersCountLabel.text = "\(user.followers!)"
         userHeaderImage.setImageWithURL(user.profileBackgroundImageURL!)
         profileImageView.setImageWithURL(user.profileURL!)
+    }
+    
+    func formatName(){
+        nameLabel.textColor = UIColor.whiteColor()
+        usernameLabel.textColor = UIColor.whiteColor()
+        nameLabel.layer.shadowColor = UIColor.blackColor().CGColor
+        nameLabel.layer.shadowOffset = CGSizeMake(5, 5)
+        nameLabel.layer.shadowRadius = 7
+        nameLabel.layer.shadowOpacity = 1.0
+        usernameLabel.layer.shadowColor = UIColor.blackColor().CGColor
+        usernameLabel.layer.shadowOffset = CGSizeMake(5, 5)
+        usernameLabel.layer.shadowRadius = 7
+        usernameLabel.layer.shadowOpacity = 1.0
     }
 
     /*

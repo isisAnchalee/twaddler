@@ -22,7 +22,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
         tableView.dataSource = self
         setupMenu()
-        self.title = "Menu"
+        setupNavIcon()
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +60,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         hamburgerViewController.contentViewController = tweetsNavController
     }
     
+    func setupNavIcon(){
+        let image = UIImage(named: "Twitter_logo_white_32")
+        self.navigationItem.titleView = UIImageView(image: image)
+    }
     /*
     // MARK: - Navigation
 
