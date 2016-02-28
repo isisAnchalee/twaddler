@@ -94,6 +94,14 @@ class TweetDetailsViewController: UIViewController {
         }
     }
     
+    @IBAction func replyBtnTapped(sender: AnyObject) {
+        if let tweet = tweet{
+            let vc = storyboard?.instantiateViewControllerWithIdentifier("TweetComposeViewController") as! TweetComposeViewController!
+            navigationController?.pushViewController(vc, animated: true)
+            vc.tweetReplyId = tweet.id
+            vc.tweetReplyUsername = tweet.user!.screenName
+        }
+    }
     func replyTapped(img: AnyObject){
         if let tweet = tweet{
             let vc = storyboard?.instantiateViewControllerWithIdentifier("TweetComposeViewController") as! TweetComposeViewController!
