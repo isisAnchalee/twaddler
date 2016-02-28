@@ -29,7 +29,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func populateTimeline(refreshControl: UIRefreshControl? = nil) {
-        TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> () in
+        let url = "/1.1/statuses/home_timeline.json"
+        TwitterClient.sharedInstance.getTimelineWithParams(nil, url: url, completion: { (tweets, error) -> () in
             self.tweets = tweets
             print(self.tweets)
             self.tableView.reloadData()

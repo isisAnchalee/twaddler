@@ -22,15 +22,19 @@ class User {
     var dictionary: NSDictionary?
     var followers: Int?
     var following: Int?
+    var tweets: Int?
+    var id: Int?
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
+        id = dictionary["id"] as? Int
         name = dictionary["name"] as? String
         screenName = dictionary["screen_name"] as? String
         description = dictionary["description"] as? String
         followers = dictionary["followers_count"] as? Int
         following = dictionary["following"] as? Int
         profileURL = NSURL(string: dictionary["profile_image_url_https"] as! String)
+        
     }
     
     func logout(){
