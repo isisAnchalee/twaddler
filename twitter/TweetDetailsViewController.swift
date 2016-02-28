@@ -52,7 +52,7 @@ class TweetDetailsViewController: UIViewController {
                 if error != nil {
                     print(error?.description)
                 } else {
-                    self.retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action-on-pressed.png")!)
+                    self.retweetImage.image = UIImage(named: "retweet")
                     tweet!.retweeted = !tweet!.retweeted
                     self.retweetCountLabel.text = String(tweet!.retweetCount)
                 }
@@ -62,7 +62,7 @@ class TweetDetailsViewController: UIViewController {
                 if error != nil {
                     print(error?.description)
                 } else {
-                    self.retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action.png")!)
+                    self.retweetImage.image = UIImage(named: "retweeted")
                     tweet!.retweeted = !tweet!.retweeted
                     tweet!.retweetCount += 1
                     self.retweetCountLabel.text = String(tweet!.retweetCount + 1)
@@ -77,7 +77,7 @@ class TweetDetailsViewController: UIViewController {
                 if error != nil {
                     print(error?.description)
                 } else {
-                    self.likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action-on-pressed.png")!)
+                    self.likeImage.image = UIImage(named: "like")
                     tweet!.favorited = !tweet!.favorited
                     self.favoriteLabel.text = String(tweet!.favCount)
                 }
@@ -87,7 +87,7 @@ class TweetDetailsViewController: UIViewController {
                 if error != nil {
                     print(error?.description)
                 } else {
-                    self.likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action.png")!)
+                    self.likeImage.image = UIImage(named: "liked")
                     tweet!.favorited = !tweet!.favorited
                     self.favoriteLabel.text = String(tweet!.favCount + 1)
                 }
@@ -135,7 +135,6 @@ class TweetDetailsViewController: UIViewController {
             
         }
     }
-
     
     func bindDataToView(){
         usernameLabel.text = tweet.user!.name

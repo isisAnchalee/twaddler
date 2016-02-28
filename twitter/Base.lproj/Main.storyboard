@@ -141,7 +141,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="114.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="@isisAnchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Es-df-DdU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="@isisAnchalee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Es-df-DdU">
                                                     <rect key="frame" x="148" y="23" width="92" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.72286076570000002" green="0.72286076570000002" blue="0.72286076570000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -208,6 +208,7 @@
                                                 <constraint firstItem="LIj-qc-Mux" firstAttribute="top" secondItem="JI5-oS-SJD" secondAttribute="bottom" constant="5" id="BXW-fE-Qm7"/>
                                                 <constraint firstItem="JI5-oS-SJD" firstAttribute="top" secondItem="gWJ-2V-Qww" secondAttribute="bottom" id="EOu-QH-8YU"/>
                                                 <constraint firstItem="plu-ad-SF4" firstAttribute="leading" secondItem="ojs-Xp-KYA" secondAttribute="trailing" constant="26" id="FI7-uk-xO5"/>
+                                                <constraint firstItem="NyY-Jk-lNx" firstAttribute="leading" relation="lessThanOrEqual" secondItem="0Es-df-DdU" secondAttribute="trailing" constant="38" id="KI1-r4-gI2"/>
                                                 <constraint firstAttribute="trailing" secondItem="LIj-qc-Mux" secondAttribute="trailing" constant="124" id="OJI-Rk-aqH"/>
                                                 <constraint firstAttribute="bottom" secondItem="ojs-Xp-KYA" secondAttribute="bottom" constant="7.5" id="OpD-Mv-ZuD"/>
                                                 <constraint firstItem="plu-ad-SF4" firstAttribute="top" secondItem="JI5-oS-SJD" secondAttribute="bottom" constant="5" id="SBr-z2-xLL"/>
