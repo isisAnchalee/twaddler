@@ -8,8 +8,13 @@
 
 import UIKit
 
+@objc protocol TweetDetailsViewControllerDelegate {
+    func updateTweetCell(tweetDetailsViewController: TweetDetailsViewController, tweet: Tweet, indexPath: NSIndexPath)
+}
+
 class TweetDetailsViewController: UIViewController {
     var tweet: Tweet!
+    weak var delegate: TweetDetailsViewControllerDelegate?
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
@@ -22,6 +27,7 @@ class TweetDetailsViewController: UIViewController {
     @IBOutlet weak var backImage: UIImageView!
     @IBOutlet weak var retweetImage: UIImageView!
     @IBOutlet weak var likeImage: UIImageView!
+    var indexPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +59,10 @@ class TweetDetailsViewController: UIViewController {
                 if error != nil {
                     print(error?.description)
                 } else {
+                    self.tweet = tweet
                     self.retweetImage.image = UIImage(named: "retweet")
-                    tweet!.retweeted = !tweet!.retweeted
                     self.retweetCountLabel.text = String(tweet!.retweetCount)
+                    self.delegate?.updateTweetCell(self, tweet: self.tweet, indexPath: self.indexPath!)
                 }
             }
         } else {
@@ -63,9 +70,9 @@ class TweetDetailsViewController: UIViewController {
                 if error != nil {
                     print(error?.description)
                 } else {
+                    self.tweet = tweet
+                    self.delegate?.updateTweetCell(self, tweet: self.tweet, indexPath: self.indexPath!)
                     self.retweetImage.image = UIImage(named: "retweeted")
-                    tweet!.retweeted = !tweet!.retweeted
-                    tweet!.retweetCount += 1
                     self.retweetCountLabel.text = String(tweet!.retweetCount + 1)
                 }
             }
@@ -78,9 +85,11 @@ class TweetDetailsViewController: UIViewController {
                 if error != nil {
                     print(error?.description)
                 } else {
+                    
                     self.likeImage.image = UIImage(named: "like")
-                    tweet!.favorited = !tweet!.favorited
                     self.favoriteLabel.text = String(tweet!.favCount)
+                    self.tweet = tweet
+                    self.delegate?.updateTweetCell(self, tweet: self.tweet, indexPath: self.indexPath!)
                 }
             }
         } else {
@@ -89,8 +98,10 @@ class TweetDetailsViewController: UIViewController {
                     print(error?.description)
                 } else {
                     self.likeImage.image = UIImage(named: "liked")
-                    tweet!.favorited = !tweet!.favorited
                     self.favoriteLabel.text = String(tweet!.favCount + 1)
+                    print("in here favcount \(tweet!.favCount)")
+                    self.tweet = tweet
+                    self.delegate?.updateTweetCell(self, tweet: self.tweet, indexPath: self.indexPath!)
                 }
             }
         }

@@ -95,18 +95,19 @@ class TweetCell: UITableViewCell {
         usernameTopMargin.constant = 10
     }
     
+    
     func setupIcons(){
         if tweet.favorited{
-            likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action-on-pressed.png")!)
+            likeImage.image = UIImage(named: "liked")
         } else {
-            likeImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/like-action.png")!)
+            likeImage.image = UIImage(named: "like")
         }
         if tweet.retweeted{
-            retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action-on-pressed.png")!)
+            retweetImage.image = UIImage(named: "retweeted")
         }else{
-            retweetImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/retweet-action.png")!)
+            retweetImage.image = UIImage(named: "retweet")
         }
-        replyImage.setImageWithURL(NSURL(string:"https://g.twimg.com/dev/documentation/image/reply-action_0.png")!)
+        replyImage.image = UIImage(named: "reply")
     }
     
 

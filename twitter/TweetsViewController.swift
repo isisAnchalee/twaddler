@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TweetCellDelegate {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TweetCellDelegate, TweetDetailsViewControllerDelegate {
 
     var tweets: [Tweet]? = []
     var refreshControl: UIRefreshControl!
@@ -29,6 +29,17 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         setupNavIcon()
     }
     
+    func updateTweetCell(tweetDetailsViewController: TweetDetailsViewController, tweet: Tweet, indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! TweetCell
+        cell.tweet.retweeted = tweet.retweeted
+        cell.tweet.retweetCount = tweet.retweetCount
+        cell.tweet.favorited = tweet.favorited
+        cell.tweet.favCount = tweet.favCount
+        print("fav count \(tweet.favCount) retweet count \(tweet.retweetCount) faved? \(tweet.favorited) \(tweet.favCount) ")
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+    }
+    
+
     func populateTimeline(refreshControl: UIRefreshControl? = nil) {
         let url: String?
         if let endpoint = endpoint{
@@ -65,12 +76,14 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let tweet = tweets![indexPath.row]
         cell.tweet = tweet
         cell.delegate = self
+        
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailsViewController = self.storyboard!.instantiateViewControllerWithIdentifier("TweetDetailsViewController") as! TweetDetailsViewController
-        
+        detailsViewController.indexPath = indexPath
+        detailsViewController.delegate = self
         let tweet = tweets![indexPath.row]
         detailsViewController.tweet = tweet
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
