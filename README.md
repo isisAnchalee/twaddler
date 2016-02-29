@@ -45,18 +45,20 @@ The following **optional** features are implemented:
 
 
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Use regex to download high-res images
+- [x] Implement delegate to update timeline on likes/favorites immediately
+- [x] Play with layers to make subtle UI changes
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. Composing new tweets and appending them to the table view without a new network request
-2. Infinite scroll
+1. Pull down profile page -> blur/resize header image
+2. Account switching
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://media.giphy.com/media/26ght6ClxCkdTd4qY/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://media.giphy.com/media/3o7abHtvTgjOeRSMyA/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

@@ -56,61 +56,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twitter/TweetDetailsViewController.swift"
-            timestampString = "478404168.63064"
+            timestampString = "478404820.148921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "setupViewData()"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "twitter/TweetDetailsViewController.swift"
-            timestampString = "478402370.803265"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "retweetTapped(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "twitter.TweetDetailsViewController.retweetTapped (twitter.TweetDetailsViewController)(Swift.AnyObject) -&gt; ()"
-                  moduleName = "twitter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisAnchalee/Desktop/twitter/twitter/TweetDetailsViewController.swift"
-                  timestampString = "477816191.109392"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "1118">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "twitter.TweetDetailsViewController.(retweetTapped (twitter.TweetDetailsViewController) -&gt; (Swift.AnyObject) -&gt; ()).(closure #2)"
-                  moduleName = "twitter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/isisAnchalee/Desktop/twitter/twitter/TweetDetailsViewController.swift"
-                  timestampString = "477816191.109967"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "1300">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -229,11 +181,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twitter/TweetDetailsViewController.swift"
-            timestampString = "478404168.63064"
+            timestampString = "478404820.148921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "addTapGestureToPhoto()"
             landmarkType = "5">
          </BreakpointContent>
