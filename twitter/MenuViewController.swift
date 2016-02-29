@@ -15,6 +15,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var viewControllers: [UINavigationController] = []
     @IBOutlet weak var tableView: UITableView!
     var hamburgerViewController: HamburgerViewController!
+    var icons: [UIImage] = [UIImage(named: "Businesswoman")!, UIImage(named: "Mobile Home")!, UIImage(named: "Google Alerts Filled")!]
     
     let titles = ["Profile", "Home Timeline", "Mentions"]
     
@@ -33,7 +34,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MenuCell") as! MenuCell
-        
+        cell.iconImage.image = icons[indexPath.row]
         cell.menuTitleLabel.text = titles[indexPath.row]
         return cell
     }

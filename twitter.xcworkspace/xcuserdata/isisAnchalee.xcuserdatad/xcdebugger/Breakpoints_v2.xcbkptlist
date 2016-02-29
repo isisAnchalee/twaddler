@@ -152,11 +152,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twitter/MenuViewController.swift"
-            timestampString = "478398031.89504"
+            timestampString = "478399263.813704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "setupMenu()"
             landmarkType = "5">
          </BreakpointContent>
