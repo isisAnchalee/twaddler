@@ -42,9 +42,13 @@ class Tweet: NSObject {
         }
         if let retweetCountData = dictionary["retweet_count"] as? Int {
             retweetCount = retweetCountData
+        } else {
+            retweetCount = 0
         }
         if let favCountData = dictionary["favorite_count"] as? Int {
             favCount = favCountData
+        } else {
+            favCount = 0
         }
         if let retweetedStatus = dictionary["retweeted_status"] as? NSDictionary {
             if let retweetUserDict = retweetedStatus["user"] as? NSDictionary {

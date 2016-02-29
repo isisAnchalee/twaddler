@@ -26,12 +26,16 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var retweetImage: UIImageView!
     @IBOutlet weak var replyImage: UIImageView!
     
+    
     @IBOutlet weak var imageTopMargin: NSLayoutConstraint!
     @IBOutlet weak var nameTopMargin: NSLayoutConstraint!
     @IBOutlet weak var usernameTopMargin: NSLayoutConstraint!
     @IBOutlet weak var timeAgoTopMargin: NSLayoutConstraint!
     weak var delegate: TweetCellDelegate?
-    
+
+    @IBOutlet weak var retweetCountLabel: UILabel!
+    @IBOutlet weak var likeCountLabel: UILabel!
+
     
     var tweet: Tweet!{
         didSet {
@@ -49,6 +53,10 @@ class TweetCell: UITableViewCell {
             } else {
                 adjustConstraints()
             }
+        print("\(tweet.favCount)")
+        print("\(tweet.retweetCount)")
+            likeCountLabel.text = "\(tweet.favCount)"
+            retweetCountLabel.text = "\(tweet.retweetCount)"
 
         }
     }

@@ -47,7 +47,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
         let tweet = tweets[indexPath.row]
         cell.tweet = tweet
@@ -106,11 +105,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         usernameLabel.textColor = UIColor.whiteColor()
         nameLabel.layer.shadowColor = UIColor.blackColor().CGColor
         nameLabel.layer.shadowOffset = CGSizeMake(5, 5)
-        nameLabel.layer.shadowRadius = 7
+        nameLabel.layer.shadowRadius = 5
         nameLabel.layer.shadowOpacity = 1.0
         usernameLabel.layer.shadowColor = UIColor.blackColor().CGColor
         usernameLabel.layer.shadowOffset = CGSizeMake(5, 5)
-        usernameLabel.layer.shadowRadius = 7
+        usernameLabel.layer.shadowRadius = 5
         usernameLabel.layer.shadowOpacity = 1.0
     }
 
