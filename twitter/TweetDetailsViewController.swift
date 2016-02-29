@@ -73,7 +73,7 @@ class TweetDetailsViewController: UIViewController {
                     self.tweet = tweet
                     self.delegate?.updateTweetCell(self, tweet: self.tweet, indexPath: self.indexPath!)
                     self.retweetImage.image = UIImage(named: "retweeted")
-                    self.retweetCountLabel.text = String(tweet!.retweetCount + 1)
+                    self.retweetCountLabel.text = String(tweet!.retweetCount)
                 }
             }
         }
@@ -87,7 +87,7 @@ class TweetDetailsViewController: UIViewController {
                 } else {
                     
                     self.likeImage.image = UIImage(named: "like")
-                    self.favoriteLabel.text = String(tweet!.favCount)
+                    self.favoriteLabel.text = String(self.tweet.favCount)
                     self.tweet = tweet
                     self.delegate?.updateTweetCell(self, tweet: self.tweet, indexPath: self.indexPath!)
                 }
@@ -98,8 +98,7 @@ class TweetDetailsViewController: UIViewController {
                     print(error?.description)
                 } else {
                     self.likeImage.image = UIImage(named: "liked")
-                    self.favoriteLabel.text = String(tweet!.favCount + 1)
-                    print("in here favcount \(tweet!.favCount)")
+                    self.favoriteLabel.text = String(self.tweet.favCount + 1)
                     self.tweet = tweet
                     self.delegate?.updateTweetCell(self, tweet: self.tweet, indexPath: self.indexPath!)
                 }

@@ -63,6 +63,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let tweet = tweets[indexPath.row]
         cell.tweet = tweet
         cell.delegate = self
+        cell.indexPath = indexPath
         return cell
     }
     

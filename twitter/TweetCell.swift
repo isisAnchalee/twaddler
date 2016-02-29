@@ -10,6 +10,8 @@ import UIKit
 
 @objc protocol TweetCellDelegate {
     optional func thumbImageClicked(tweet: Tweet?)
+    optional func retweetClicked(tweet: Tweet?, indexPath: NSIndexPath)
+    optional func likeClicked(tweet: Tweet?, indexPath: NSIndexPath)
 }
 
 class TweetCell: UITableViewCell {
@@ -37,6 +39,10 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var likeCountLabel: UILabel!
 
     
+    @IBOutlet weak var likeIconView: UIImageView!
+    @IBOutlet weak var retweetIconView: UIImageView!
+    var indexPath: NSIndexPath?
+
     var tweet: Tweet!{
         didSet {
             setupIcons()
@@ -53,8 +59,6 @@ class TweetCell: UITableViewCell {
             } else {
                 adjustConstraints()
             }
-        print("\(tweet.favCount)")
-        print("\(tweet.retweetCount)")
             likeCountLabel.text = "\(tweet.favCount)"
             retweetCountLabel.text = "\(tweet.retweetCount)"
 
@@ -66,9 +70,25 @@ class TweetCell: UITableViewCell {
         profileImageView.userInteractionEnabled = true
         profileImageView.addGestureRecognizer(tapGestureRecognizer)
     }
+    
+    func addTapGestureToIcons(){
+        let likeTapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("clickedLikeBtn:"))
+        likeImage.userInteractionEnabled = true
+        likeImage.addGestureRecognizer(likeTapGestureRecognizer)
+        let retweetGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("clickedRetweetBtn:"))
+        retweetImage.userInteractionEnabled = true
+        retweetImage.addGestureRecognizer(retweetGestureRecognizer)
+    }
+    
+    func clickedLikeBtn(sender: UITapGestureRecognizer){
+        delegate?.likeClicked!(tweet, indexPath: self.indexPath!)
+    }
+    
+    func clickedRetweetBtn(sender: UITapGestureRecognizer){
+        delegate?.retweetClicked!(self.tweet, indexPath: self.indexPath!)
+    }
 
     func clickedProfileImage(sender: UITapGestureRecognizer){
-        print("clicked!!!")
         delegate?.thumbImageClicked?(self.tweet)
     }
     
@@ -77,6 +97,7 @@ class TweetCell: UITableViewCell {
         profileImageView.layer.cornerRadius = 5
         profileImageView.clipsToBounds = true
         addTapGestureToPhoto()
+        addTapGestureToIcons()
     }
     
     func setInitialConstraints(){

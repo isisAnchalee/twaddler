@@ -56,6 +56,56 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         })
     }
     
+    func retweetClicked(tweet: Tweet?, indexPath: NSIndexPath){
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! TweetCell
+        if tweet!.retweeted{
+            TwitterClient.sharedInstance.unretweetWithCompletion(tweet!.id!) { (tweet, error) -> () in
+                if error != nil {
+                    print(error?.description)
+                } else {
+                    cell.tweet = tweet
+                    cell.retweetImage.image = UIImage(named: "retweet")
+                    cell.retweetCountLabel.text = String(tweet!.retweetCount)
+                }
+            }
+        } else {
+            TwitterClient.sharedInstance.retweetWithCompletion(tweet!.id!) { (tweet, error) -> () in
+                if error != nil {
+                    print(error?.description)
+                } else {
+                    cell.tweet = tweet
+                    cell.retweetImage.image = UIImage(named: "retweeted")
+                    cell.retweetCountLabel.text = String(tweet!.retweetCount)
+                }
+            }
+        }
+    }
+    
+    func likeClicked(tweet: Tweet?, indexPath: NSIndexPath){
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! TweetCell
+        if tweet!.favorited{
+            TwitterClient.sharedInstance.unfavoriteWithCompletion(tweet!.id) { (tweet, error) -> () in
+                if error != nil {
+                    print(error?.description)
+                } else {
+                    cell.tweet = tweet
+                    cell.likeImage.image = UIImage(named: "like")
+                    cell.likeCountLabel.text = String(tweet!.favCount)
+                }
+            }
+        } else {
+            TwitterClient.sharedInstance.favoriteWithCompletion(tweet!.id) { (tweet, error) -> () in
+                if error != nil {
+                    print(error?.description)
+                } else {
+                    cell.tweet = tweet
+                    cell.likeImage.image = UIImage(named: "liked")
+                    cell.likeCountLabel.text = String(tweet!.favCount + 1)
+                }
+            }
+        }
+    }
+    
     func addRefresh() {
         self.refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: "refreshCallback", forControlEvents: UIControlEvents.ValueChanged)
@@ -76,7 +126,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let tweet = tweets![indexPath.row]
         cell.tweet = tweet
         cell.delegate = self
-        
+        cell.indexPath = indexPath
         return cell
     }
     
@@ -110,6 +160,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let image = UIImage(named: "Twitter_logo_white_32")
         self.navigationItem.titleView = UIImageView(image: image)
     }
+    
     
     func thumbImageClicked(tweet: Tweet?){
         print("CLICKED!!!")
