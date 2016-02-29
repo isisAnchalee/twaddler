@@ -15,7 +15,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var viewControllers: [UINavigationController] = []
     @IBOutlet weak var tableView: UITableView!
     var hamburgerViewController: HamburgerViewController!
-    let titles = ["Profile", "Home Timeline"]
+    
+    let titles = ["Profile", "Home Timeline", "Mentions"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +52,21 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
         let profVC = profileViewController as! ProfileViewController
+        let mentionsController = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as! TweetsViewController
+        mentionsController.endpoint = "1.1/statuses/mentions_timeline.json"
+        let mentionsNavController = UINavigationController(rootViewController: mentionsController)
         profVC.user = User.currentUser!
         tweetsViewController = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController")
         let profileNavController = UINavigationController(rootViewController: profileViewController)
         let tweetsNavController = UINavigationController(rootViewController: tweetsViewController)
+
         Utils.configureDefaultNavigationBar(profileNavController.navigationBar)
         Utils.configureDefaultNavigationBar(tweetsNavController.navigationBar)
+        Utils.configureDefaultNavigationBar(mentionsNavController.navigationBar)
         viewControllers.append(profileNavController)
         viewControllers.append(tweetsNavController)
+        viewControllers.append(mentionsNavController)
+        
         hamburgerViewController.contentViewController = tweetsNavController
     }
     

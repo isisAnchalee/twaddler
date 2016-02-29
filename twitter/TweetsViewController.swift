@@ -12,6 +12,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
 
     var tweets: [Tweet]? = []
     var refreshControl: UIRefreshControl!
+    var endpoint: String?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,8 +30,13 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func populateTimeline(refreshControl: UIRefreshControl? = nil) {
-        let url = "/1.1/statuses/home_timeline.json"
-        TwitterClient.sharedInstance.getTimelineWithParams(nil, url: url, completion: { (tweets, error) -> () in
+        let url: String?
+        if let endpoint = endpoint{
+            url = endpoint
+        } else {
+            url = "/1.1/statuses/home_timeline.json"
+        }
+        TwitterClient.sharedInstance.getTimelineWithParams(nil, url: url!, completion: { (tweets, error) -> () in
             self.tweets = tweets
             self.tableView.reloadData()
             if let refreshControl = refreshControl {
