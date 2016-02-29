@@ -21,7 +21,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tweetCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
     @IBOutlet weak var followersCountLabel: UILabel!
-    
+    var refreshControl: UIRefreshControl!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -33,7 +34,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         profileImageView.layer.cornerRadius = 5
         profileImageView.clipsToBounds = true
         setupNavIcon()
+        addRefresh()
         // Do any additional setup after loading the view.
+    }
+    
+    func addRefresh() {
+        self.refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: "refreshCallback", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl!, atIndex: 0)
+    }
+    
+    func refreshCallback() {
+        populateTimeline(self.refreshControl)
     }
     
     func setupNavIcon(){
